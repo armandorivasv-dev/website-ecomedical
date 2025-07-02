@@ -1,53 +1,84 @@
 import * as React from 'react';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import Box from '@mui/material/Box';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
-import MenuItem from '@mui/material/MenuItem';
-import Drawer from '@mui/material/Drawer';
-import MenuIcon from '@mui/icons-material/Menu';
-import ToggleColorMode from '../components/toggle-color-mode';
-import { useWindowScroll } from '@/hooks/use-window-scroll';
+import {
+  IconButton,
+  Stack,
+  Drawer,
+  MenuItem,
+  Typography,
+  Divider,
+  Container,
+  Button,
+  Toolbar,
+  AppBar,
+  Box,
+  Menu,
+  useMediaQuery,
+} from '@mui/material';
 import Image from 'next/image';
+import { ContactForm } from '@/components/contact-form';
+import MenuIcon from '@mui/icons-material/Menu';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/X';
+import { Facebook, Instagram, YouTube } from '@mui/icons-material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const logoStyle = {
-  width: '140px',
-  height: 'auto',
-  cursor: 'pointer',
-};
+const menuItems = [
+  {
+    id: 0,
+    title: 'Inicio',
+    value: 'home',
+  },
+  {
+    id: 1,
+    title: 'Nosotros',
+    value: 'about-us',
+  },
+  {
+    id: 2,
+    title: 'Servicios',
+    value: 'services',
+    // submenu: [
+    //   { id: 0, title: 'Personales', value: 'personal-services' },
+    //   { id: 1, title: 'Profesionales', value: 'professional-services' },
+    // ],
+  },
+  {
+    id: 3,
+    title: 'Como trabajamos',
+    value: 'epp',
+  },
+  // {
+  //   id: 4,
+  //   title: 'Testimonios',
+  //   value: 'testimonials',
+  // },
+];
 
-function TopNav({ mode, toggleColorMode }) {
+function TopNav({ mode }) {
   const [open, setOpen] = useState(false);
+  const [openContactForm, setOpenContactForm] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  // ScrollFunction
-  const [inScrooll, setInScroll] = useState(false);
-  const offset = 64;
-  const delay = 100;
-
-  const handleWindowScroll = useCallback(() => {
-    if (window.scrollY > offset) {
-      setInScroll(true);
-    } else {
-      setInScroll(false);
-    }
-  }, []);
-
-  useWindowScroll({
-    handler: handleWindowScroll,
-    delay,
-  });
-
-  // ScrollFunction
+  const handleOpenContactForm = () => setOpenContactForm(true);
+  const handleCloseContactForm = () => setOpenContactForm(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
 
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
@@ -65,15 +96,99 @@ function TopNav({ mode, toggleColorMode }) {
 
   return (
     <>
-      <AppBar
+      {/* <AppBar
+        id='home'
         position='fixed'
         sx={{
           boxShadow: 0,
           bgcolor: 'transparent',
           backgroundImage: 'none',
-          mt: 2,
+
+          //mt: 2,
         }}
+      > */}
+      <AppBar
+        position='fixed'
+        sx={(theme) => ({
+          boxShadow: 0,
+          bgcolor: 'white',
+          backgroundImage: 'none',
+          width: '100%',
+          borderBottom: '1px solid',
+          borderColor: 'divider',
+          backdropFilter: 'blur(24px)',
+          boxShadow:
+            theme.palette.mode === 'light'
+              ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
+              : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
+        })}
       >
+        <Box
+          id='home'
+          sx={{
+            flexGrow: 1,
+            display: 'flex',
+            direction: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            py: mdUp ? 2 : 1,
+            px: mdUp ? 30 : 2,
+            backgroundColor: 'black',
+            width: '100%',
+          }}
+        >
+          <Stack
+            direction={mdUp ? 'row' : 'column'}
+            spacing={mdUp ? 4 : 0}
+          >
+            <Stack
+              direction={'row'}
+              spacing={1}
+              justifyContent={'center'}
+              alignItems={'center'}
+              //sx={{ display: { xs: 'none', md: 'flex' } }}
+            >
+              <LocationOnIcon />
+              <Typography
+                variant='caption'
+                color='white'
+              >
+                Presidente Ríos 58, Santiago
+              </Typography>
+            </Stack>
+
+            <Stack
+              direction={'row'}
+              spacing={1}
+              justifyContent={'center'}
+              alignItems={'center'}
+              //sx={{ display: { xs: 'none', md: 'flex' } }}
+            >
+              <EmailIcon />
+              <Typography
+                variant='caption'
+                color='white'
+              >
+                ecomedical.cl@gmail.com
+              </Typography>
+            </Stack>
+
+            <Stack
+              direction={'row'}
+              spacing={1}
+              justifyContent={'center'}
+              alignItems={'center'}
+            >
+              <PhoneIcon />
+              <Typography
+                variant='caption'
+                color='white'
+              >
+                +56 9 4550 5319
+              </Typography>
+            </Stack>
+          </Stack>
+        </Box>
         <Container maxWidth='lg'>
           <Toolbar
             variant='regular'
@@ -82,133 +197,106 @@ function TopNav({ mode, toggleColorMode }) {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
-              borderRadius: '999px',
-              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
+              //borderRadius: '50px',
+              width: '100%',
+
+              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255)' : 'rgba(0, 0, 0, 0.4)',
               backdropFilter: 'blur(24px)',
               maxHeight: 40,
-              border: '1px solid',
-              borderColor: 'divider',
-              boxShadow:
-                theme.palette.mode === 'light'
-                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
-                  : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
+              //border: '1px solid',
+              //borderColor: 'divider',
+              // boxShadow:
+              //   theme.palette.mode === 'light'
+              //     ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
+              //     : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
             })}
           >
             <Box
+              id='home'
               sx={{
                 flexGrow: 1,
                 display: 'flex',
                 alignItems: 'center',
-                ml: '-18px',
+                justifyContent: 'space-between',
                 px: 0,
               }}
             >
               <Image
-                src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                }
-                alt='Logo VICO'
-                //sizes='100vw'
-                // style={{
-                //   width: '100%',
-                //   height: 'auto',
-                // }}
-                width={inScrooll ? 150 : 200}
-                height={inScrooll ? 150 : 200}
+                src='/assets/logos/ecomedical-logo.png'
+                width={286 * 0.8}
+                height={63 * 0.8}
+                alt='ecomedical atención medica a domicilio'
                 priority={true}
               />
               <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                {menuItems.map((item, index) => (
+                  <div key={index}>
+                    {item.submenu ? (
+                      <>
+                        <MenuItem
+                          onClick={handleMenuOpen}
+                          sx={{ py: '6px', px: '12px' }}
+                        >
+                          <Typography
+                            variant='subtitle1'
+                            color='text.primary'
+                          >
+                            {item.title}
+                          </Typography>
+                        </MenuItem>
+                        <Menu
+                          anchorEl={anchorEl}
+                          open={Boolean(anchorEl)}
+                          onClose={handleMenuClose}
+                        >
+                          {item.submenu.map((subItem) => (
+                            <MenuItem
+                              key={subItem.id}
+                              onClick={() => {
+                                scrollToSection(subItem.value);
+                                handleMenuClose();
+                              }}
+                              sx={{ py: '6px', px: '12px' }}
+                            >
+                              <Typography
+                                variant='subtitle1'
+                                color='text.primary'
+                              >
+                                {subItem.title}
+                              </Typography>
+                            </MenuItem>
+                          ))}
+                        </Menu>
+                      </>
+                    ) : (
+                      <MenuItem
+                        onClick={() => scrollToSection(item.value)}
+                        sx={{ py: '6px', px: '12px' }}
+                      >
+                        <Typography
+                          variant='subtitle1'
+                          color='text.primary'
+                        >
+                          {item.title}
+                        </Typography>
+                      </MenuItem>
+                    )}
+                  </div>
+                ))}
                 <MenuItem
-                  onClick={() => scrollToSection('features')}
+                  onClick={handleOpenContactForm}
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography
-                    variant='body2'
+                    variant='subtitle1'
                     color='text.primary'
                   >
-                    Features
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('testimonials')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography
-                    variant='body2'
-                    color='text.primary'
-                  >
-                    Testimonials
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('highlights')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography
-                    variant='body2'
-                    color='text.primary'
-                  >
-                    Highlights
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('pricing')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography
-                    variant='body2'
-                    color='text.primary'
-                  >
-                    Pricing
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('faq')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography
-                    variant='body2'
-                    color='text.primary'
-                  >
-                    FAQ
+                    Contacto
                   </Typography>
                 </MenuItem>
               </Box>
             </Box>
-            <Box
-              sx={{
-                display: { xs: 'none', md: 'flex' },
-                gap: 0.5,
-                alignItems: 'center',
-              }}
-            >
-              <ToggleColorMode
-                mode={mode}
-                toggleColorMode={toggleColorMode}
-              />
-
-              <Button
-                color='primary'
-                variant='text'
-                size='small'
-                component='a'
-                href='/material-ui/getting-started/templates/sign-in/'
-                target='_blank'
-              >
-                Sign in
-              </Button>
-              <Button
-                color='primary'
-                variant='contained'
-                size='small'
-                component='a'
-                href='/material-ui/getting-started/templates/sign-up/'
-                target='_blank'
-              >
-                Sign up
-              </Button>
-            </Box>
-            <Box sx={{ display: { sm: '', md: 'none' } }}>
+            <Box sx={{ display: { xs: '', md: 'none' } }}>
               <Button
                 variant='text'
                 color='primary'
@@ -231,62 +319,145 @@ function TopNav({ mode, toggleColorMode }) {
                     flexGrow: 1,
                   }}
                 >
-                  <Box
+                  <Image
+                    src='/assets/logos/ecomedical-logo.png'
+                    width={286 * 0.6}
+                    height={63 * 0.6}
+                    alt='ecomedical atención medica a domicilio'
+                    priority={true}
+                  />
+                  {menuItems.map((item, index) => (
+                    <div key={index}>
+                      {item.submenu ? (
+                        <>
+                          <MenuItem
+                            onClick={handleMenuOpen}
+                            sx={{ py: '6px', px: '12px' }}
+                          >
+                            <Typography
+                              variant='subtitle1'
+                              color='text.primary'
+                            >
+                              {item.title}
+                            </Typography>
+                          </MenuItem>
+                          <Menu
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)}
+                            onClose={handleMenuClose}
+                          >
+                            {item.submenu.map((subItem) => (
+                              <MenuItem
+                                key={subItem.id}
+                                onClick={() => {
+                                  scrollToSection(subItem.value);
+                                  handleMenuClose();
+                                }}
+                                sx={{ py: '6px', px: '12px' }}
+                              >
+                                <Typography
+                                  variant='subtitle1'
+                                  color='text.primary'
+                                >
+                                  {subItem.title}
+                                </Typography>
+                              </MenuItem>
+                            ))}
+                          </Menu>
+                        </>
+                      ) : (
+                        <MenuItem
+                          onClick={() => scrollToSection(item.value)}
+                          sx={{ py: '6px', px: '12px' }}
+                        >
+                          <Typography
+                            variant='subtitle1'
+                            color='text.primary'
+                          >
+                            {item.title}
+                          </Typography>
+                        </MenuItem>
+                      )}
+                    </div>
+                  ))}
+                  <MenuItem
+                    onClick={handleOpenContactForm}
+                    sx={{ py: '6px', px: '12px' }}
+                  >
+                    <Typography
+                      variant='subtitle1'
+                      color='text.primary'
+                    >
+                      Contacto
+                    </Typography>
+                  </MenuItem>
+                  <Divider />
+                  <Stack
+                    direction='row'
+                    justifyContent='center'
+                    spacing={1}
                     sx={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'end',
-                      flexGrow: 1,
+                      color: 'text.secondary',
                     }}
                   >
-                    <ToggleColorMode
-                      mode={mode}
-                      toggleColorMode={toggleColorMode}
-                    />
-                  </Box>
-                  <MenuItem onClick={() => scrollToSection('features')}>Features</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('testimonials')}>Testimonials</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('highlights')}>Highlights</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('pricing')}>Pricing</MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>FAQ</MenuItem>
-                  <Divider />
-                  <MenuItem>
-                    <Button
-                      color='primary'
-                      variant='contained'
-                      component='a'
-                      href='/material-ui/getting-started/templates/sign-up/'
+                    <IconButton
+                      href='https://www.instagram.com/salmedbienestar/'
                       target='_blank'
-                      sx={{ width: '100%' }}
+                      aria-label='Instagram'
+                      sx={{ alignSelf: 'center', color: 'primary.main' }}
                     >
-                      Sign up
-                    </Button>
-                  </MenuItem>
-                  <MenuItem>
-                    <Button
-                      color='primary'
-                      variant='outlined'
-                      component='a'
-                      href='/material-ui/getting-started/templates/sign-in/'
-                      target='_blank'
-                      sx={{ width: '100%' }}
-                    >
-                      Sign in
-                    </Button>
-                  </MenuItem>
+                      <Instagram />
+                    </IconButton>
+                    {/* <IconButton
+                    href='https://x.com/salmedca?s=11'
+                    target='_blank'
+                    aria-label='X'
+                    sx={{ alignSelf: 'center', color: 'primary.main' }}
+                  >
+                    <TwitterIcon />
+                  </IconButton>
+                  <IconButton
+                    href='https://www.linkedin.com/company/salmed-servicio-m-dicos-integrales/'
+                    target='_blank'
+                    aria-label='LinkedIn'
+                    sx={{ alignSelf: 'center', color: 'primary.main' }}
+                  >
+                    <LinkedInIcon />
+                  </IconButton>
+                  <IconButton
+                    href='https://web.facebook.com/Salmedbienestar/'
+                    target='_blank'
+                    aria-label='Facebook'
+                    sx={{ alignSelf: 'center', color: 'primary.main' }}
+                  >
+                    <Facebook />
+                  </IconButton>
+                  <IconButton
+                    href='https://www.youtube.com/@salmedwebinars9591'
+                    target='_blank'
+                    aria-label='Youtube'
+                    sx={{ alignSelf: 'center', color: 'primary.main' }}
+                  >
+                    <YouTube />
+                  </IconButton> */}
+                  </Stack>
                 </Box>
               </Drawer>
             </Box>
           </Toolbar>
         </Container>
       </AppBar>
+      <ContactForm
+        open={openContactForm}
+        handleClose={handleCloseContactForm}
+      />
     </>
   );
 }
 
 TopNav.propTypes = {
   mode: PropTypes.oneOf(['dark', 'light']).isRequired,
-  toggleColorMode: PropTypes.func.isRequired,
+  //toggleColorMode: PropTypes.func.isRequired,
 };
 
 export default TopNav;

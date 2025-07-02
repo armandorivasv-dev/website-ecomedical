@@ -1,6 +1,11 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import { ButtonContactForm } from '@/sections/contact-form/buttonContainer';
+import { Hero } from '@/sections/hero';
+import { Features } from '@/sections/features';
+import { AboutUs } from '@/sections/about-us';
+import { Services } from '@/sections/services';
+import { Steps } from '@/sections/steps';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -8,10 +13,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Website: Description</title>
+        <title>ecomedical: Atención medica a domicilio</title>
         <meta
           name='description'
-          content='Description of the website'
+          content='Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.'
         />
         <meta
           name='viewport'
@@ -23,7 +28,11 @@ export default function Home() {
         />
       </Head>
       <main>
-        <ButtonContactForm />
+        <Hero />
+        <Features />
+        <AboutUs />
+        <Services />
+        <Steps />
       </main>
     </>
   );
