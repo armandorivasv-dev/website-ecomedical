@@ -4,7 +4,7 @@ const WINDOW_MS = 15 * 60 * 1000; // 15 minutos
 const MAX_REQUESTS = 2;
 const requestsMap = new Map();
 
-const allowedOrigins = ['https://ecomedical.cl', 'https://www.ecomedical.cl'];
+const allowedOrigins = ['https://ecomedical.cl', 'https://www.ecomedical.cl', 'https://website-ecomedical.vercel.app'];
 
 const getClientIp = (req) => {
   const xForwardedFor = req.headers['x-forwarded-for'];
