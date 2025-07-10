@@ -135,9 +135,10 @@ export const Hero = () => {
           </Stack>
         </Stack>
         <Box
+          display={{ xs: 'none', md: 'block' }}
           position='absolute'
-          bottom={{ xs: '8%', md: '1%' }}
-          left={{ xs: '45%', md: '50%' }}
+          bottom={{ xs: '10vh', md: '1vh' }}
+          left={{ xs: '45vw', md: '50vw' }}
           sx={{
             zIndex: 2,
           }}
