@@ -1,64 +1,64 @@
 import { Container, Typography, CardContent, Card, useMediaQuery, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import { green } from '@/styles/get-custom-theme';
 
 const cardData = [
   {
     id: '01.',
     title: 'Ecotomografía general',
     description:
-      'Estudio de órganos internos y tejidos blandos mediante ultrasonido, para diagnósticos precisos a domicilio.',
+      'Estudio abdominal, tiroideo, pelviana femenina y masculina, renal, cuello, inguinales, testiculares, pared abdominal, y partes blandas.',
   },
   {
     id: '02.',
     title: 'Ecotomografía músculo esquelética',
-    description: 'Evaluación de músculos, tendones y articulaciones por ultrasonido, identificando lesiones en casa.',
+    description:
+      'Evaluación de muñeca, mano, tobillo, pie, codo, rodilla, hombro, caderas, muslo, pierna, brazo, y antebrazo.',
   },
   {
     id: '03.',
     title: 'Ecotomografía Doppler colo',
     description:
-      'Visualización del flujo sanguíneo con ultrasonido y color, detectando anomalías vasculares a domicilio. ',
+      'Doppler arterial y venoso de miembros inferiores y superiores, Doppler carotideo y vertebral, Doppler testicular, Doppler descarte de TVP. Doppler partes blandas.',
   },
   {
     id: '04.',
     title: 'Ecocardiograma',
-    description: 'Análisis del corazón por ultrasonido, evaluando su estructura y función en la comodidad del hogar. ',
+    description: 'Análisis del corazón por ultrasonido, evaluando su estructura y función en la comodidad del hogar.',
   },
   {
     id: '05.',
     title: 'Electrocardiograma',
-    description: 'Registro de la actividad eléctrica del corazón, detectando arritmias y problemas cardíacos en casa. ',
+    description: 'Registro de la actividad eléctrica del corazón, detectando arritmias y problemas cardíacos en casa.',
   },
   {
     id: '06.',
     title: 'Holters cardiacos',
     description:
-      'Monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio. ',
+      'Monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio.',
   },
   {
     id: '07.',
     title: 'Holters de presión',
     description:
-      'Registro continuo de la presión arterial por 24 horas, útil para diagnósticos de hipertensión en casa. ',
+      'Registro continuo de la presión arterial por 24 horas, útil para diagnósticos de hipertensión en casa.',
   },
   {
     id: '08.',
     title: 'Rayos x',
-    description:
-      'Obtención de imágenes internas del cuerpo mediante radiación ionizante, para diagnósticos óseos y pulmonares a domicilio. ',
+    description: 'Radiologia general, tórax, cráneo, y en general.',
   },
   {
     id: '09.',
     title: 'Laboratorio',
-    description:
-      'Toma de muestras sanguíneas y de otros fluidos para análisis clínicos, con resultados entregados en casa. ',
+    description: 'Toma de muestras con resultados entregados en casa.',
   },
   {
     id: '10.',
     title: ' Medicina general',
     description:
-      'Monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio. ',
+      'Monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio.',
   },
 ];
 
@@ -76,8 +76,6 @@ export const Services = () => {
       >
         <Grid container>
           <Grid
-            // xs={12}
-            // md={12}
             size={{ xs: 12, md: 12 }}
             container
             direction={'column'}
@@ -90,11 +88,11 @@ export const Services = () => {
             >
               <LocalHospitalIcon
                 color='primary'
-                sx={{ color: 'white' }}
+                sx={{ color: green[300] }}
               />
               <Typography
                 variant='h6'
-                color='white'
+                color={green[300]}
                 maxWidth={600}
                 textAlign='left'
               >
@@ -111,8 +109,6 @@ export const Services = () => {
           </Grid>
 
           <Grid
-            // xs={12}
-            // md={12}
             size={{ xs: 12, md: 12 }}
             container
             spacing={4}
@@ -121,11 +117,9 @@ export const Services = () => {
             {cardData.map((item, index) => (
               <Grid
                 key={index}
-                // xs={12}
-                // md={6}
                 size={{ xs: 12, md: 6 }}
               >
-                <Card sx={{ minWidth: 275, borderRadius: 6 }}>
+                <Card sx={{ minWidth: 275, minHeight: 160, borderRadius: 6 }}>
                   <CardContent>
                     <Typography
                       variant='h5'

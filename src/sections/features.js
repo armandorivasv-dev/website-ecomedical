@@ -1,4 +1,4 @@
-import { Container, Typography, CardContent, Card, useMediaQuery, Stack } from '@mui/material';
+import { Container, Typography, CardContent, Card, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
 import { green } from '@/styles/get-custom-theme';
@@ -18,14 +18,13 @@ const cardData = [
   },
   {
     id: '03.',
-    title: 'Soporte completo 24/7',
+    title: 'Soporte integral',
     description: 'Siempre aquí para citas y emergencias.',
     icon: '/assets/icons/ecomedical-soporte-icon.png',
   },
 ];
 
 export const Features = () => {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   return (
     <Container
       id='features'
@@ -41,7 +40,7 @@ export const Features = () => {
             size={{ xs: 12, md: 12 }}
             container
             spacing={4}
-            marginTop={mdUp ? 0 : 2}
+            marginTop={{ xs: 2, md: 0 }}
           >
             {cardData.map((item, index) => (
               <Grid
@@ -54,30 +53,15 @@ export const Features = () => {
                       direction={'row'}
                       spacing={2}
                     >
-                      {/* <Typography
-                        variant='h5'
-                        fontWeight={600}
-                        color='primary.main'
-                      >
-                        {item.id}
-                      </Typography> */}
                       <Image
                         src={item.icon}
                         alt={item.title}
                         width={50}
                         height={50}
                       />
-                      <Stack
-                        direction={'column'}
-                        //spacing={2}
-                      >
+                      <Stack direction={'column'}>
                         <Typography variant='h5'>{item.title}</Typography>
-                        <Typography
-                          variant='body2'
-                          //marginTop={2}
-                        >
-                          {item.description}
-                        </Typography>
+                        <Typography variant='body2'>{item.description}</Typography>
                       </Stack>
                     </Stack>
                   </CardContent>

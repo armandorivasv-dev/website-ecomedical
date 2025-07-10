@@ -6,6 +6,7 @@ import { Features } from '@/sections/features';
 import { AboutUs } from '@/sections/about-us';
 import { Services } from '@/sections/services';
 import { Steps } from '@/sections/steps';
+import { Contacts } from '@/sections/contacts';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +18,15 @@ export default function Home() {
         <meta
           name='description'
           content='Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.'
+          key='desc'
+        />
+        <meta
+          property='og:description'
+          content='Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.'
+        />
+        <meta
+          property='og:image'
+          content='https://example.com/images/cool-page.jpg'
         />
         <meta
           name='viewport'
@@ -33,6 +43,7 @@ export default function Home() {
         <AboutUs />
         <Services />
         <Steps />
+        <Contacts />
       </main>
     </>
   );

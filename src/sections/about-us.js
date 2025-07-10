@@ -1,37 +1,14 @@
-import { Container, Typography, CardContent, Card, useMediaQuery, Stack, Button } from '@mui/material';
+import { Container, Typography, Stack, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
-import { green } from '@/styles/get-custom-theme';
+
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
-const cardData = [
-  {
-    id: '01.',
-    title: 'Doctores Expertos',
-    description: 'Profesionales cualificados que ofrecen atención de máxima calidad. ',
-    icon: '/assets/icons/ecomedical-medicos-icon.png',
-  },
-  {
-    id: '02.',
-    title: 'Atención de emergencia',
-    description: 'Tratamiento rápido y confiable cuando más lo necesitas.',
-    icon: '/assets/icons/ecomedical-emergencia-icon.png',
-  },
-  {
-    id: '03.',
-    title: 'Soporte completo 24/7',
-    description: 'Siempre aquí para citas y emergencias.',
-    icon: '/assets/icons/ecomedical-soporte-icon.png',
-  },
-];
-
 export const AboutUs = () => {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   return (
     <Container
-      id='features'
+      id='about-us'
       maxWidth='xxl'
-      //sx={{ backgroundColor: 'secondary.main' }}
     >
       <Container
         maxWidth='lg'
@@ -52,15 +29,16 @@ export const AboutUs = () => {
           </Grid>
           <Grid
             size={{ xs: 12, md: 6 }}
-            sx={{ py: 6 }}
-            //container
-            //alignItems={'stretch'}
+            direction={'column'}
+            alignItems={'center'}
+            justifyContent={'center'}
+            //paddingY={10}
+            sx={{ py: { xs: 0, md: 10 } }}
           >
             <Stack
               direction='row'
               alignItems='center'
               spacing={1}
-              //sx={{ pt: mdUp ? '30vh' : '25vh' }}
             >
               <LocalHospitalIcon
                 color='primary'
@@ -75,10 +53,16 @@ export const AboutUs = () => {
                 NOSOTROS
               </Typography>
             </Stack>
-            <Typography variant={mdUp ? 'h3' : 'h4'}>
+            <Typography
+              variant='h4'
+              sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h3 } })}
+            >
               EcoMedical crea un entorno seguro, tu salud es nuestra prioridad
             </Typography>
-            <Typography variant='subtitle2'>
+            <Typography
+              variant='subtitle2'
+              sx={{ pt: 2 }}
+            >
               Ecomedical se ha convertido en una solución para todas aquellas personas que buscan atención médica, en la
               comodidad de su domicilio, o que tienen dificultades para llegar a los centros de atención medica.
             </Typography>
@@ -86,7 +70,7 @@ export const AboutUs = () => {
             <Stack
               direction='row'
               spacing={4}
-              sx={{ pt: 2 }}
+              sx={{ pt: 4 }}
             >
               <Stack>
                 <Image
@@ -96,7 +80,12 @@ export const AboutUs = () => {
                   height={50}
                 />
 
-                <Typography variant={mdUp ? 'h6' : 'h4'}>Nuestra Visión</Typography>
+                <Typography
+                  variant='h4'
+                  sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h6 } })}
+                >
+                  Nuestra Visión
+                </Typography>
 
                 <Typography
                   variant='subtitle2'
@@ -114,7 +103,12 @@ export const AboutUs = () => {
                   height={50}
                 />
 
-                <Typography variant={mdUp ? 'h6' : 'h4'}>Nuestra Misión</Typography>
+                <Typography
+                  variant='h4'
+                  sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h6 } })}
+                >
+                  Nuestra Misión
+                </Typography>
 
                 <Typography
                   variant='subtitle2'
@@ -128,31 +122,16 @@ export const AboutUs = () => {
 
             <Button
               variant='contained'
-              //color='primary'
               size='large'
-              //onClick={handleOpenContactForm}
+              sx={{
+                mt: 6,
+              }}
+              href='https://wa.me/56977013227'
+              target='_blank'
             >
               AGENDA UNA CITA
             </Button>
           </Grid>
-          {/* <Grid size={{ xs: 4, md: 4 }}>
-            <Image
-              src='/assets/images/ecomedical-nosotros.png'
-              alt='ecomedical about us'
-              width={400}
-              height={600}
-              //style={{ objectFit: 'cover' }}
-            />
-          </Grid>
-          <Grid
-            size={{ xs: 8, md: 4 }}
-            marginTop={mdUp ? 0 : 2}
-          >
-            <Typography variant='subtitle1'>NOSOTROS</Typography>
-            <Typography variant='subtitle1'>
-              EcoMedical crea un entorno seguro, tu salud es nuestra prioridad
-            </Typography>
-          </Grid> */}
         </Grid>
       </Container>
     </Container>

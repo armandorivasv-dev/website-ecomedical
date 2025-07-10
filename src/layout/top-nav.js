@@ -14,17 +14,15 @@ import {
   AppBar,
   Box,
   Menu,
-  useMediaQuery,
 } from '@mui/material';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact-form';
 import MenuIcon from '@mui/icons-material/Menu';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
-import { Facebook, Instagram, YouTube } from '@mui/icons-material';
+import { Instagram } from '@mui/icons-material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Link from 'next/link';
 
 const menuItems = [
   {
@@ -41,21 +39,12 @@ const menuItems = [
     id: 2,
     title: 'Servicios',
     value: 'services',
-    // submenu: [
-    //   { id: 0, title: 'Personales', value: 'personal-services' },
-    //   { id: 1, title: 'Profesionales', value: 'professional-services' },
-    // ],
   },
   {
     id: 3,
     title: 'Como trabajamos',
-    value: 'epp',
+    value: 'steps',
   },
-  // {
-  //   id: 4,
-  //   title: 'Testimonios',
-  //   value: 'testimonials',
-  // },
 ];
 
 function TopNav({ mode }) {
@@ -78,8 +67,6 @@ function TopNav({ mode }) {
     setAnchorEl(null);
   };
 
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
-
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
     const offset = 128;
@@ -96,17 +83,6 @@ function TopNav({ mode }) {
 
   return (
     <>
-      {/* <AppBar
-        id='home'
-        position='fixed'
-        sx={{
-          boxShadow: 0,
-          bgcolor: 'transparent',
-          backgroundImage: 'none',
-
-          //mt: 2,
-        }}
-      > */}
       <AppBar
         position='fixed'
         sx={(theme) => ({
@@ -131,15 +107,15 @@ function TopNav({ mode }) {
             direction: 'row',
             alignItems: 'center',
             justifyContent: 'space-around',
-            py: mdUp ? 2 : 1,
-            px: mdUp ? 30 : 2,
+            py: { xs: 1, md: 2 },
+            px: { xs: 2, md: 30 },
             backgroundColor: 'black',
             width: '100%',
           }}
         >
           <Stack
-            direction={mdUp ? 'row' : 'column'}
-            spacing={mdUp ? 4 : 0}
+            direction={{ xs: 'column', md: 'row' }}
+            spacing={{ xs: 0, md: 4 }}
           >
             <Stack
               direction={'row'}
@@ -157,36 +133,47 @@ function TopNav({ mode }) {
               </Typography>
             </Stack>
 
-            <Stack
-              direction={'row'}
-              spacing={1}
-              justifyContent={'center'}
-              alignItems={'center'}
-              //sx={{ display: { xs: 'none', md: 'flex' } }}
+            <Link
+              href='mailto:ecomedical.cl@gmail.com'
+              style={{ textDecoration: 'none' }}
             >
-              <EmailIcon />
-              <Typography
-                variant='caption'
-                color='white'
+              <Stack
+                direction={'row'}
+                spacing={1}
+                justifyContent={'center'}
+                alignItems={'center'}
               >
-                ecomedical.cl@gmail.com
-              </Typography>
-            </Stack>
+                <EmailIcon sx={{ color: 'white' }} />
 
-            <Stack
-              direction={'row'}
-              spacing={1}
-              justifyContent={'center'}
-              alignItems={'center'}
+                <Typography
+                  variant='caption'
+                  color='white'
+                >
+                  ecomedical.cl@gmail.com
+                </Typography>
+              </Stack>
+            </Link>
+
+            <Link
+              href='https://wa.me/56977013227'
+              target='_blank'
+              style={{ textDecoration: 'none' }}
             >
-              <PhoneIcon />
-              <Typography
-                variant='caption'
-                color='white'
+              <Stack
+                direction={'row'}
+                spacing={1}
+                justifyContent={'center'}
+                alignItems={'center'}
               >
-                +56 9 4550 5319
-              </Typography>
-            </Stack>
+                <PhoneIcon sx={{ color: 'white' }} />
+                <Typography
+                  variant='caption'
+                  color='white'
+                >
+                  +56 9 7701 3227
+                </Typography>
+              </Stack>
+            </Link>
           </Stack>
         </Box>
         <Container maxWidth='lg'>
@@ -401,45 +388,13 @@ function TopNav({ mode }) {
                     }}
                   >
                     <IconButton
-                      href='https://www.instagram.com/salmedbienestar/'
+                      href='https://www.instagram.com/ecomedical.cl/'
                       target='_blank'
                       aria-label='Instagram'
                       sx={{ alignSelf: 'center', color: 'primary.main' }}
                     >
                       <Instagram />
                     </IconButton>
-                    {/* <IconButton
-                    href='https://x.com/salmedca?s=11'
-                    target='_blank'
-                    aria-label='X'
-                    sx={{ alignSelf: 'center', color: 'primary.main' }}
-                  >
-                    <TwitterIcon />
-                  </IconButton>
-                  <IconButton
-                    href='https://www.linkedin.com/company/salmed-servicio-m-dicos-integrales/'
-                    target='_blank'
-                    aria-label='LinkedIn'
-                    sx={{ alignSelf: 'center', color: 'primary.main' }}
-                  >
-                    <LinkedInIcon />
-                  </IconButton>
-                  <IconButton
-                    href='https://web.facebook.com/Salmedbienestar/'
-                    target='_blank'
-                    aria-label='Facebook'
-                    sx={{ alignSelf: 'center', color: 'primary.main' }}
-                  >
-                    <Facebook />
-                  </IconButton>
-                  <IconButton
-                    href='https://www.youtube.com/@salmedwebinars9591'
-                    target='_blank'
-                    aria-label='Youtube'
-                    sx={{ alignSelf: 'center', color: 'primary.main' }}
-                  >
-                    <YouTube />
-                  </IconButton> */}
                   </Stack>
                 </Box>
               </Drawer>
@@ -457,7 +412,6 @@ function TopNav({ mode }) {
 
 TopNav.propTypes = {
   mode: PropTypes.oneOf(['dark', 'light']).isRequired,
-  //toggleColorMode: PropTypes.func.isRequired,
 };
 
 export default TopNav;

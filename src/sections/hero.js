@@ -1,30 +1,25 @@
 import { useState } from 'react';
-import { Box, Stack, Typography, Button, useMediaQuery, Container } from '@mui/material';
+import { Box, Stack, Typography, Button, Container } from '@mui/material';
 import { ContactForm } from '../components/contact-form';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import { getImageProps } from 'next/image';
 import { green } from '@/styles/get-custom-theme';
 
 export const Hero = () => {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
-
-  const heroImage = mdUp
-    ? '/assets/images/ecomedical-atencion-medica-domicilio-hero.png'
-    : '/assets/images/ecomedical-atencion-medica-domicilio-hero.png';
-
   const style = {
     height: '100vh',
     width: '100%',
     backgroundSize: 'cover',
-    backgroundImage: `url(${heroImage})`,
+
+    backgroundImage: {
+      xs: `url('/assets/images/ecomedical-atencion-medica-domicilio-hero-mobile.png')`,
+      md: `url('/assets/images/ecomedical-atencion-medica-domicilio-hero-desktop.png')`,
+    },
     position: 'relative',
-    //mt: 15,
-    //display: 'flex',
-    //alignItems: 'center',
-    //justifyContent: 'center',
-    backgroundPosition: mdUp ? 'none' : 'center',
-    //backgroundRepeat: 'no-repeat',
+
+    backgroundPosition: { xs: 'center', md: 'top left' },
+    backgroundRepeat: 'no-repeat',
+
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -58,7 +53,8 @@ export const Hero = () => {
           sx={{
             position: 'relative',
             zIndex: 2,
-            paddingLeft: mdUp ? 8 : 4,
+            //paddingLeft: mdUp ? 8 : 4,
+            paddingLeft: { xs: 4, md: 8 },
 
             //height: '80%',
           }}
@@ -67,14 +63,17 @@ export const Hero = () => {
             direction='row'
             alignItems='center'
             spacing={1}
-            sx={{ pt: mdUp ? '30vh' : '25vh' }}
+            sx={{ pt: { xs: '22vh', md: '30vh' } }}
           >
             <LocalHospitalIcon
               color='primary'
               sx={{ color: green[300] }}
             />
             <Typography
-              variant='h6'
+              variant='subtitle1'
+              sx={(theme) => ({
+                [theme.breakpoints.up('md')]: { ...theme.typography.h6 },
+              })}
               color={green[300]}
               maxWidth={600}
               textAlign='left'
@@ -84,7 +83,10 @@ export const Hero = () => {
           </Stack>
 
           <Typography
-            variant={mdUp ? 'h1' : 'h3'}
+            variant='h4'
+            sx={(theme) => ({
+              [theme.breakpoints.up('md')]: { ...theme.typography.h1 },
+            })}
             color='white'
             textAlign='left'
             maxWidth={600}
@@ -93,10 +95,13 @@ export const Hero = () => {
           </Typography>
 
           <Typography
-            variant='h6'
+            variant='subtitle1'
             color='white'
             maxWidth={600}
             textAlign='left'
+            sx={(theme) => ({
+              [theme.breakpoints.up('md')]: { ...theme.typography.h6 },
+            })}
           >
             EcoMedical - Su socio de confianza en el cuidado de la salud
           </Typography>
@@ -112,13 +117,14 @@ export const Hero = () => {
           <Stack
             direction={{ xs: 'row', md: 'row' }}
             spacing={2}
-            sx={{ pt: 2 }}
+            sx={{ pt: { xs: 0, md: 2 } }}
           >
             <Button
               variant='contained'
               //color='primary'
               size='large'
-              onClick={handleOpenContactForm}
+              href='https://wa.me/56977013227'
+              target='_blank'
             >
               CALLCENTER
             </Button>
@@ -135,8 +141,8 @@ export const Hero = () => {
         </Stack>
         <Box
           position='absolute'
-          bottom='1%'
-          left='50%'
+          bottom={{ xs: '8%', md: '1%' }}
+          left={{ xs: '45%', md: '50%' }}
           sx={{
             //transform: 'translateX(-50%)',
             zIndex: 2,

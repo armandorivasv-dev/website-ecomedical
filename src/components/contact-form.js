@@ -2,17 +2,14 @@ import { useState, useEffect } from 'react';
 import {
   Box,
   Dialog,
-  DialogTitle,
   DialogContent,
   Typography,
-  useMediaQuery,
   Button,
   TextField,
   Stack,
   IconButton,
   Checkbox,
   FormControlLabel,
-  Input,
 } from '@mui/material';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';

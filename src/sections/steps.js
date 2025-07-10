@@ -1,4 +1,4 @@
-import { Container, Typography, CardContent, Card, useMediaQuery, Stack, Button } from '@mui/material';
+import { Container, Typography, CardContent, Card, Stack, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import { green } from '@/styles/get-custom-theme';
@@ -31,12 +31,10 @@ const cardData = [
 ];
 
 export const Steps = () => {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   return (
     <Container
-      id='services'
+      id='steps'
       maxWidth='xxl'
-      //sx={{ backgroundColor: 'secondary.main' }}
     >
       <Container
         maxWidth='lg'
@@ -44,61 +42,55 @@ export const Steps = () => {
       >
         <Grid container>
           <Grid
-            // xs={12}
-            // md={12}
             size={{ xs: 12, md: 12 }}
             container
             direction={'column'}
-            alignItems={'center'}
-            justifyContent={'center'}
           >
             <Stack
               direction='row'
-              alignItems='center'
               spacing={1}
+              sx={{
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+              }}
             >
-              <LocalHospitalIcon
-                color='primary'
-                sx={{ color: 'white' }}
-              />
+              <LocalHospitalIcon color='primary' />
               <Typography
                 variant='h6'
-                color='white'
+                color='primary.main'
                 maxWidth={600}
                 textAlign='left'
               >
-                NUESTROS SERVICIOS
+                PASOS A SEGUIR
               </Typography>
             </Stack>
             <Typography
-              variant={mdUp ? 'h3' : 'h4'}
-              textAlign='center'
-              color='white'
+              variant='h4'
+              sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h3 } })}
+              maxWidth={500}
             >
-              Soluciones integrales de atención médica
+              Atención médica confiable enfocada en su bienestar
             </Typography>
           </Grid>
 
           <Grid
-            // xs={12}
-            // md={12}
             size={{ xs: 12, md: 12 }}
             container
-            //spacing={4}
             marginTop={4}
           >
             {cardData.map((item, index) => (
               <Grid
                 key={index}
-                // xs={12}
-                // md={6}
                 size={{ xs: 12, md: 6 }}
               >
                 <Card
                   sx={{
                     minWidth: 275,
                     borderRadius: 2,
-                    backgroundColor: mdUp ? item.backgroundColorDesktop : item.backgroundColorMobile,
+                    backgroundColor: {
+                      xs: item.backgroundColorMobile,
+                      md: item.backgroundColorDesktop,
+                    },
                     py: 8,
                   }}
                 >
@@ -138,22 +130,22 @@ export const Steps = () => {
             ))}
           </Grid>
         </Grid>
-      </Container>
-      <Stack
-        direction='row'
-        alignItems={'center'}
-        justifyContent={'center'}
-        sx={{ pt: 2 }}
-      >
-        <Button
-          variant='contained'
-          //color='primary'
-          size='large'
-          //onClick={handleOpenContactForm}
+        <Stack
+          direction='row'
+          alignItems={'center'}
+          justifyContent={'center'}
+          sx={{ pt: 4 }}
         >
-          AGENDA UNA CITA
-        </Button>
-      </Stack>
+          <Button
+            variant='contained'
+            size='large'
+            href='https://wa.me/56977013227'
+            target='_blank'
+          >
+            AGENDA UNA CITA
+          </Button>
+        </Stack>
+      </Container>
     </Container>
   );
 };

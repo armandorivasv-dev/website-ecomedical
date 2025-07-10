@@ -1,290 +1,213 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-
-import FacebookIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/X";
-
-const logoStyle = {
-  width: "140px",
-  height: "auto",
-};
+import { Box, Container, IconButton, Link, Stack, Typography, useMediaQuery } from '@mui/material';
+import Image from 'next/image';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/X';
+import { Facebook, Instagram, YouTube } from '@mui/icons-material';
 
 function Copyright() {
   return (
     <Typography
+      textAlign='center'
       variant='body2'
       color='text.secondary'
       mt={1}
     >
-      {"Copyright © "}
-      <Link href='https://mui.com/'>Sitemark&nbsp;</Link>
-      {new Date().getFullYear()}
+      {'Copyright © '}
+      ecomedical {new Date().getFullYear()}
+    </Typography>
+  );
+}
+
+function DevelopedBy() {
+  return (
+    <Typography
+      textAlign='center'
+      variant='body2'
+      color='text.secondary'
+      mt={1}
+    >
+      {'Developed by '}
+      <Link
+        href='https://www.armandorivasv.dev/'
+        target='_blank'
+      >
+        @armandorivasv.dev&nbsp;
+      </Link>
     </Typography>
   );
 }
 
 export default function Footer() {
+  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   return (
     <Container
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
-        textAlign: { sm: "center", md: "left" },
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: { xs: 4, md: 8 },
+        py: { xs: 8, md: 10 },
+        textAlign: { xs: 'center', md: 'left' },
       }}
     >
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          width: "100%",
-          justifyContent: "space-between",
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: { xs: 4, md: 8 },
+          width: '100%',
+          justifyContent: 'flex-start',
         }}
       >
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
+            display: 'flex',
+            flexDirection: 'column',
             gap: 4,
-            minWidth: { xs: "100%", sm: "60%" },
+
+            minWidth: { xs: '100%', md: '20%' },
           }}
         >
-          <Box sx={{ width: { xs: "100%", sm: "60%" } }}>
-            <Box sx={{ ml: "-15px" }}>
-              <img
-                src={
-                  "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg"
-                }
-                style={logoStyle}
-                alt='logo of sitemark'
+          <Box sx={{ width: { xs: '100%', md: '60%' } }}>
+            <Box sx={{ ml: '0px' }}>
+              <Image
+                src='/assets/logos/ecomedical-logo.png'
+                width={286 * 0.8}
+                height={63 * 0.8}
+                alt='ecomedical atención medica a domicilio'
+                priority={true}
               />
             </Box>
-            <Typography
-              variant='body2'
-              fontWeight={600}
-              gutterBottom
-            >
-              Newsletter
-            </Typography>
-            <Typography
-              variant='body2'
-              color='text.secondary'
-              mb={2}
-            >
-              Subscribe to our newsletter for weekly updates and promotions.
-            </Typography>
-            <Stack
-              direction='row'
-              spacing={1}
-              useFlexGap
-            >
-              <TextField
-                id='outlined-basic'
-                hiddenLabel
-                size='small'
-                variant='outlined'
-                fullWidth
-                aria-label='Enter your email address'
-                placeholder='Your email address'
-                inputProps={{
-                  autocomplete: "off",
-                  ariaLabel: "Enter your email address",
-                }}
-              />
-              <Button
-                variant='contained'
-                color='primary'
-                sx={{ flexShrink: 0 }}
-              >
-                Subscribe
-              </Button>
-            </Stack>
           </Box>
         </Box>
         <Box
           sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
+            display: { xs: 'flex', md: 'flex' },
+            flexDirection: 'column',
             gap: 1,
           }}
         >
           <Typography
-            variant='body2'
+            variant='subtitle1'
             fontWeight={600}
           >
-            Product
+            Dirección
           </Typography>
-          <Link
-            color='text.secondary'
-            href='#'
+          <Typography
+            variant='subtitle1'
+            fontWeight={400}
           >
-            Features
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
+            Presidente Ríos 58
+          </Typography>
+          <Typography
+            variant='subtitle1'
+            fontWeight={400}
           >
-            Testimonials
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Highlights
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Pricing
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            FAQs
-          </Link>
+            Santiago
+          </Typography>
         </Box>
         <Box
           sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
+            display: { xs: 'flex', sm: 'flex' },
+            flexDirection: 'column',
             gap: 1,
           }}
         >
           <Typography
-            variant='body2'
+            variant='subtitle1'
             fontWeight={600}
           >
-            Company
+            Contactos
           </Typography>
           <Link
             color='text.secondary'
-            href='#'
+            href='mailto:ecomedical.cl@gmail.com'
           >
-            About us
+            ecomedical.cl@gmail.com
           </Link>
-          <Link
-            color='text.secondary'
-            href='#'
+          {/* <Typography
+            variant='subtitle1'
+            fontWeight={400}
           >
-            Careers
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Press
-          </Link>
+            +58 (0412)607.09.25
+          </Typography> */}
         </Box>
         <Box
           sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
+            display: { xs: 'flex', sm: 'flex' },
+            flexDirection: 'column',
             gap: 1,
           }}
         >
           <Typography
-            variant='body2'
+            variant='subtitle1'
             fontWeight={600}
           >
-            Legal
+            Redes Sociales
           </Typography>
-          <Link
-            color='text.secondary'
-            href='#'
+          <Stack
+            direction='row'
+            justifyContent={mdUp ? 'left' : 'center'}
+            spacing={1}
+            useFlexGap
+            sx={{
+              color: 'text.secondary',
+            }}
           >
-            Terms
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Privacy
-          </Link>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Contact
-          </Link>
+            <IconButton
+              href='https://www.instagram.com/ecomedical.cl/'
+              target='_blank'
+              aria-label='Instagram'
+              sx={{ alignSelf: 'center', color: 'primary.main' }}
+            >
+              <Instagram />
+            </IconButton>
+            {/* <IconButton
+              href='https://x.com/salmedca?s=11'
+              target='_blank'
+              aria-label='X'
+              sx={{ alignSelf: 'center', color: 'primary.main' }}
+            >
+              <TwitterIcon />
+            </IconButton>
+            <IconButton
+              href='https://www.linkedin.com/company/salmed-servicio-m-dicos-integrales/'
+              aria-label='LinkedIn'
+              sx={{ alignSelf: 'center', color: 'primary.main' }}
+            >
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton
+              href='https://web.facebook.com/Salmedbienestar/'
+              aria-label='Facebook'
+              sx={{ alignSelf: 'center', color: 'primary.main' }}
+            >
+              <Facebook />
+            </IconButton>
+            <IconButton
+              href='https://www.youtube.com/@salmedwebinars9591'
+              aria-label='Youtube'
+              sx={{ alignSelf: 'center', color: 'primary.main' }}
+            >
+              <YouTube />
+            </IconButton> */}
+          </Stack>
         </Box>
       </Box>
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          pt: { xs: 4, sm: 8 },
-          width: "100%",
-          borderTop: "1px solid",
-          borderColor: "divider",
+          display: 'flex',
+          justifyContent: 'center',
+          pt: { xs: 4, sm: 2 },
+          width: '100%',
+          borderTop: '1px solid',
+          borderColor: 'divider',
         }}
       >
         <div>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Privacy Policy
-          </Link>
-          <Typography
-            display='inline'
-            sx={{ mx: 0.5, opacity: 0.5 }}
-          >
-            &nbsp;•&nbsp;
-          </Typography>
-          <Link
-            color='text.secondary'
-            href='#'
-          >
-            Terms of Service
-          </Link>
           <Copyright />
+          <DevelopedBy />
         </div>
-        <Stack
-          direction='row'
-          justifyContent='left'
-          spacing={1}
-          useFlexGap
-          sx={{
-            color: "text.secondary",
-          }}
-        >
-          <IconButton
-            color='inherit'
-            href='https://github.com/mui'
-            aria-label='GitHub'
-            sx={{ alignSelf: "center" }}
-          >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color='inherit'
-            href='https://twitter.com/MaterialUI'
-            aria-label='X'
-            sx={{ alignSelf: "center" }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color='inherit'
-            href='https://www.linkedin.com/company/mui/'
-            aria-label='LinkedIn'
-            sx={{ alignSelf: "center" }}
-          >
-            <LinkedInIcon />
-          </IconButton>
-        </Stack>
       </Box>
     </Container>
   );
