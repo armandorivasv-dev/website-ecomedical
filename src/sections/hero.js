@@ -53,10 +53,7 @@ export const Hero = () => {
           sx={{
             position: 'relative',
             zIndex: 2,
-            //paddingLeft: mdUp ? 8 : 4,
             paddingLeft: { xs: 4, md: 8 },
-
-            //height: '80%',
           }}
         >
           <Stack
@@ -121,7 +118,6 @@ export const Hero = () => {
           >
             <Button
               variant='contained'
-              //color='primary'
               size='large'
               href='https://wa.me/56977013227'
               target='_blank'
@@ -130,7 +126,6 @@ export const Hero = () => {
             </Button>
             <Button
               variant='outlined'
-              //backgroundColor='primary.main'
               sx={{ borderColor: 'white', color: 'white' }}
               size='large'
               onClick={handleOpenContactForm}
@@ -144,9 +139,7 @@ export const Hero = () => {
           bottom={{ xs: '8%', md: '1%' }}
           left={{ xs: '45%', md: '50%' }}
           sx={{
-            //transform: 'translateX(-50%)',
             zIndex: 2,
-            //display: { xs: 'none', md: 'block' },
           }}
         >
           <ArrowCircleDownIcon

@@ -1,14 +1,10 @@
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
-import { ButtonContactForm } from '@/sections/contact-form/buttonContainer';
 import { Hero } from '@/sections/hero';
 import { Features } from '@/sections/features';
 import { AboutUs } from '@/sections/about-us';
 import { Services } from '@/sections/services';
 import { Steps } from '@/sections/steps';
 import { Contacts } from '@/sections/contacts';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -26,7 +22,7 @@ export default function Home() {
         />
         <meta
           property='og:image'
-          content='https://example.com/images/cool-page.jpg'
+          content='/assets/logos/ecomedical-logo.png'
         />
         <meta
           name='viewport'

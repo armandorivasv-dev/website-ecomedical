@@ -32,7 +32,6 @@ export const AboutUs = () => {
             direction={'column'}
             alignItems={'center'}
             justifyContent={'center'}
-            //paddingY={10}
             sx={{ py: { xs: 0, md: 10 } }}
           >
             <Stack

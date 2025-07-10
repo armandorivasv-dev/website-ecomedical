@@ -16,7 +16,6 @@
     "@mui/material": "^7.2.0",
     "@mui/styled-engine-sc": "^7.1.1",
     "dotenv": "^17.2.0",
-    "express-rate-limit": "^7.5.1",
     "formik": "^2.4.6",
     "next": "15.3.4",
     "react": "^19.0.0",

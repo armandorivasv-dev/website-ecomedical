@@ -3,7 +3,6 @@ import Fab from '@mui/material/Fab';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Typography } from '@mui/material';
 import Link from 'next/link';
-import { green } from '@/styles/get-custom-theme';
 
 export const WhatsappFab = () => {
   return (
@@ -14,7 +13,6 @@ export const WhatsappFab = () => {
     >
       <Fab
         variant='extended'
-        //color={green[400]}
         color='secondary'
         aria-label='Contacto WhatsApp'
         sx={{

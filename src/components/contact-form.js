@@ -280,7 +280,6 @@ export const ContactForm = (props) => {
                     />
                   </Stack>
                   <FormControlLabel
-                    //required
                     control={
                       <Checkbox
                         checked={checked}

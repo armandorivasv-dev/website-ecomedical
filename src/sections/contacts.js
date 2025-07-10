@@ -54,7 +54,6 @@ export const Contacts = () => {
                     padding: 1,
                     marginRight: 2,
                     backgroundColor: green[300],
-                    //fontSize: mdUp ? 60 : 50,
                     fontSize: { xs: 50, md: 60 },
                   }}
                 />

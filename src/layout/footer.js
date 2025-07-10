@@ -1,8 +1,6 @@
 import { Box, Container, IconButton, Link, Stack, Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/X';
-import { Facebook, Instagram, YouTube } from '@mui/icons-material';
+import { Instagram } from '@mui/icons-material';
 
 function Copyright() {
   return (
@@ -125,12 +123,6 @@ export default function Footer() {
           >
             ecomedical.cl@gmail.com
           </Link>
-          {/* <Typography
-            variant='subtitle1'
-            fontWeight={400}
-          >
-            +58 (0412)607.09.25
-          </Typography> */}
         </Box>
         <Box
           sx={{
@@ -162,35 +154,6 @@ export default function Footer() {
             >
               <Instagram />
             </IconButton>
-            {/* <IconButton
-              href='https://x.com/salmedca?s=11'
-              target='_blank'
-              aria-label='X'
-              sx={{ alignSelf: 'center', color: 'primary.main' }}
-            >
-              <TwitterIcon />
-            </IconButton>
-            <IconButton
-              href='https://www.linkedin.com/company/salmed-servicio-m-dicos-integrales/'
-              aria-label='LinkedIn'
-              sx={{ alignSelf: 'center', color: 'primary.main' }}
-            >
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton
-              href='https://web.facebook.com/Salmedbienestar/'
-              aria-label='Facebook'
-              sx={{ alignSelf: 'center', color: 'primary.main' }}
-            >
-              <Facebook />
-            </IconButton>
-            <IconButton
-              href='https://www.youtube.com/@salmedwebinars9591'
-              aria-label='Youtube'
-              sx={{ alignSelf: 'center', color: 'primary.main' }}
-            >
-              <YouTube />
-            </IconButton> */}
           </Stack>
         </Box>
       </Box>
