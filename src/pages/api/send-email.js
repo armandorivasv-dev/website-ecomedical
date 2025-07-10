@@ -4,7 +4,7 @@ const WINDOW_MS = 15 * 60 * 1000; // 15 minutos
 const MAX_REQUESTS = 2;
 const requestsMap = new Map();
 
-const allowedOrigins = ['https://ecomedical.cl', 'https://www.ecomedical.cl', 'http://localhost:3000'];
+const allowedOrigins = ['https://ecomedical.cl', 'https://www.ecomedical.cl'];
 
 const getClientIp = (req) => {
   const xForwardedFor = req.headers['x-forwarded-for'];
@@ -42,7 +42,7 @@ const handler = async (req, res) => {
     const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
 
-    sendSmtpEmail.to = [{ email: 'armandorivasv.dev@gmail.com' }];
+    sendSmtpEmail.to = [{ email: 'ecomedical.cl@gmail.com' }];
     sendSmtpEmail.sender = { email: 'ecomedical.platform@gmail.com', name: 'ecomedical.cl' };
     sendSmtpEmail.subject = `Nuevo mensaje de "${fullname}" desde Formulario de Contacto`;
     sendSmtpEmail.textContent = `
