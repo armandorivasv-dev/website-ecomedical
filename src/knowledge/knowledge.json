@@ -1,0 +1,194 @@
+[
+  {
+    "id": "horarios",
+    "content": "Los horarios de atención médica son de 8:00AM a 9:00PM, sujetos a disponibilidad. Durante los días de semana, la atención suele estar disponible en ese rango horario. Los fines de semana y festivos la disponibilidad puede ser limitada y se recomienda consultar previamente. En casos excepcionales o de urgencia, es posible coordinar atenciones fuera de horario, sujeto a evaluación y disponibilidad del equipo médico.",
+    "labels": [
+      "horario atención",
+      "horarios médicos",
+      "atención fines de semana",
+      "horario consulta",
+      "horario médico",
+      "horario urgencia"
+    ]
+  },
+  {
+    "id": "precios-ecos",
+    "content": "El precio estándar para exámenes de Ecotomografía (Ecos) en el cordón de la Vespucio es de $85.000, incluyendo el traslado. Fuera de esa zona, el valor puede variar dependiendo de la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica, por favor consulta indicando tu dirección. El precio incluye la realización del examen y la entrega del informe médico.",
+    "labels": [
+      "precio eco",
+      "precios ecos",
+      "costo ecotomografía",
+      "valor eco",
+      "precio ecografía",
+      "precio ecos domicilio"
+    ]
+  },
+  {
+    "id": "precios-rayos-x",
+    "content": "El precio para Rayos X de una proyección en el cordón de la Vespucio es de $85.000, incluyendo el traslado y la entrega digital de resultados en 24 horas. Si se requieren más proyecciones en la misma visita, cada proyección adicional tiene un recargo. Fuera del cordón de la Vespucio, el precio puede variar según la distancia o comuna. Si tienes dudas sobre el costo total para tu caso, consulta indicando la cantidad de proyecciones y tu ubicación.",
+    "labels": ["precio rayos x", "precios rayos x", "precio para rayos x", "costo rayos x", "valor rayos x"]
+  },
+  {
+    "id": "precios-dopler-colo",
+    "content": "El precio para Doppler color en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo.",
+    "labels": ["precio doppler", "precio doppler color", "costo doppler", "valor doppler", "precios doppler domicilio"]
+  },
+  {
+    "id": "medios-de-pago",
+    "content": "Aceptamos una amplia variedad de medios de pago para tu comodidad: tarjetas de crédito (Visa, MasterCard, American Express), tarjetas de débito de cualquier banco y transferencias electrónicas. Si necesitas factura o boleta, indícalo al momento de agendar. En casos excepcionales, se puede coordinar pago en efectivo, sujeto a confirmación previa.",
+    "labels": [
+      "medios de pago",
+      "formas de pago",
+      "cómo pagar",
+      "pago con tarjeta",
+      "pago transferencia",
+      "pago efectivo"
+    ]
+  },
+  {
+    "id": "ecotomografia-general",
+    "content": "Ofrecemos el servicio de Ecotomografía general a domicilio, ideal para quienes requieren estudios sin desplazarse a un centro médico. Realizamos estudios abdominales, tiroideos, pelvianos (femenino y masculino), renales, de cuello, inguinales, testiculares, pared abdominal y partes blandas. El examen se realiza con equipos portátiles de alta resolución y el informe se entrega en formato digital. Si tienes dudas sobre la preparación o el tipo de ecografía que necesitas, consulta con nuestro equipo antes de agendar.",
+    "labels": [
+      "ecotomografía general",
+      "eco general",
+      "ecografía general",
+      "estudios ecográficos",
+      "eco domicilio",
+      "ecografía a domicilio"
+    ]
+  },
+  {
+    "id": "ecotomografia-musculo-esqueletica",
+    "content": "Nuestro servicio de Ecotomografía músculo esquelética evalúa articulaciones y tejidos blandos como muñeca, mano, tobillo, pie, codo, rodilla, hombro, caderas, muslo, pierna, brazo y antebrazo, todo en la comodidad de tu hogar. Es útil para diagnosticar lesiones deportivas, inflamaciones, desgarros y otras patologías musculares o articulares. Si tienes dolor, inflamación o sospecha de lesión, este examen puede ayudarte a obtener un diagnóstico preciso sin salir de casa.",
+    "labels": [
+      "ecotomografía músculo esquelética",
+      "eco músculo esquelético",
+      "ecografía muscular",
+      "eco articulaciones",
+      "eco lesiones deportivas"
+    ]
+  },
+  {
+    "id": "ecotomografia-doppler-color",
+    "content": "Realizamos Ecotomografía Doppler color a domicilio, incluyendo estudios arteriales y venosos de miembros inferiores y superiores, Doppler carotídeo y vertebral, Doppler testicular, descarte de trombosis venosa profunda (TVP) y Doppler de partes blandas. El Doppler permite evaluar el flujo sanguíneo y detectar obstrucciones o alteraciones vasculares. Si tienes antecedentes de trombosis, várices, dolor o hinchazón, consulta por este examen.",
+    "labels": [
+      "ecotomografía doppler",
+      "doppler color",
+      "doppler arterial",
+      "doppler venoso",
+      "doppler domicilio",
+      "eco doppler"
+    ]
+  },
+  {
+    "id": "ecocardiograma",
+    "content": "El servicio de Ecocardiograma permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio.",
+    "labels": ["ecocardiograma", "eco corazón", "ultrasonido cardíaco", "examen corazón", "ecocardiograma domicilio"]
+  },
+  {
+    "id": "electrocardiograma",
+    "content": "Ofrecemos Electrocardiograma (ECG) a domicilio, registrando la actividad eléctrica del corazón para detectar arritmias, infartos y otros problemas cardíacos. El procedimiento es rápido, no invasivo y los resultados se entregan en formato digital. Si tienes palpitaciones, dolor en el pecho o antecedentes cardíacos, este examen puede ser indicado para ti.",
+    "labels": ["electrocardiograma", "ecg", "examen corazón", "electrocardiograma domicilio", "test cardíaco"]
+  },
+  {
+    "id": "holter-cardiaco",
+    "content": "El Holter cardíaco permite el monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades que no siempre se detectan en un ECG convencional. Es ideal para pacientes con palpitaciones, desmayos o sospecha de arritmias intermitentes. El equipo se instala en tu domicilio y se retira al día siguiente para analizar los resultados.",
+    "labels": ["holter cardíaco", "monitoreo cardíaco", "holter 24 horas", "estudio ritmo cardíaco", "holter domicilio"]
+  },
+  {
+    "id": "holter-presion",
+    "content": "El Holter de presión registra la presión arterial de manera continua por 24 horas, útil para diagnósticos de hipertensión y control de tratamientos. El equipo se instala en tu domicilio y se retira al día siguiente. Es recomendable para pacientes con presión arterial variable o sospecha de hipertensión de bata blanca.",
+    "labels": [
+      "holter presión",
+      "monitoreo presión arterial",
+      "holter de presión arterial",
+      "estudio presión",
+      "presión 24 horas"
+    ]
+  },
+  {
+    "id": "rayos-x",
+    "content": "Contamos con servicio de Rayos X digital de alta resolución para tórax (AP y lateral) y sistema óseo completo, con entrega de resultados en 24 horas. El examen se realiza en tu domicilio con equipos portátiles certificados. Es útil para diagnosticar fracturas, infecciones pulmonares, artrosis y otras patologías. Si necesitas varias proyecciones, consulta por los recargos aplicables.",
+    "labels": [
+      "rayos x",
+      "radiografía",
+      "radiografías domicilio",
+      "rayos x domicilio",
+      "radiografía tórax",
+      "radiografía huesos"
+    ]
+  },
+  {
+    "id": "laboratorio",
+    "content": "Ofrecemos toma de muestras de sangre, orina y cultivos en tu domicilio, con entrega de resultados durante el día en la mayoría de los exámenes. El servicio es ideal para pacientes con movilidad reducida, adultos mayores o quienes prefieren evitar salas de espera. Si el examen requiere ayuno o preparación especial, te lo informaremos al agendar.",
+    "labels": [
+      "laboratorio",
+      "exámenes de sangre",
+      "toma de muestras",
+      "análisis clínicos",
+      "laboratorio domicilio",
+      "exámenes orina"
+    ]
+  },
+  {
+    "id": "medicina-general",
+    "content": "Brindamos atención médica integral para adultos y niños, abordando diversas patologías y consultas en el hogar. Atendemos enfermedades agudas (resfríos, infecciones, dolores) y crónicas (diabetes, hipertensión), realizamos controles preventivos y seguimiento de tratamientos. Si tienes síntomas, dudas de salud o necesitas receta médica, puedes agendar una consulta a domicilio.",
+    "labels": [
+      "medicina general",
+      "consulta médica",
+      "médico domicilio",
+      "atención médica",
+      "consulta adultos",
+      "consulta niños"
+    ]
+  },
+  {
+    "id": "cobertura",
+    "content": "Nuestra cobertura de atención médica integral abarca la Región Metropolitana y la 5ta Región. En la Región Metropolitana la cobertura es completa, mientras que en la 5ta Región es parcial y sujeta a disponibilidad. Para comunas rurales o alejadas, consulta previamente para confirmar la factibilidad y posibles recargos por traslado.",
+    "labels": [
+      "cobertura",
+      "zonas de atención",
+      "comunas atendidas",
+      "regiones cubiertas",
+      "cobertura médica",
+      "atención regiones"
+    ]
+  },
+  {
+    "id": "contacto-correo",
+    "content": "Puedes contactarnos escribiendo a nuestro correo: ecomedical.cl@gmail.com. Respondemos habitualmente en menos de 24 horas hábiles. Si necesitas enviar exámenes previos o fotos para evaluación, puedes adjuntarlos en tu correo.",
+    "labels": ["contacto", "correo electrónico", "email", "contacto médico", "enviar exámenes", "contacto ecomedical"]
+  },
+  {
+    "id": "pasos-atencion",
+    "content": "¿Cómo trabajamos? 1. Agenda tu consulta médica a domicilio a través de nuestro sitio web, correo o teléfono. 2. Consulta con nuestros médicos en la fecha y hora acordada. 3. Recibe una evaluación médica completa y personalizada en tu domicilio. 4. Obtén tu diagnóstico detallado y, si corresponde, recetas o indicaciones. Si necesitas reagendar o cancelar, avísanos con anticipación para evitar recargos.",
+    "labels": ["pasos atención", "cómo funciona", "proceso atención", "agendar consulta", "pasos consulta médica"]
+  },
+  {
+    "id": "agendar-cita",
+    "content": "Para agendar una cita, presiona el botón 'AGENDA UNA CITA' en nuestro sitio web o contáctanos directamente por correo o teléfono. No es necesario registrarse, pero si lo haces podrás acceder a tu historial de consultas y facilitar futuras agendaciones. Las citas para el mismo día están sujetas a disponibilidad.",
+    "labels": ["agendar cita", "reservar hora", "pedir consulta", "agendar médico", "cita médica", "reservar consulta"]
+  },
+  {
+    "id": "doctores-expertos",
+    "content": "Contamos con doctores expertos y profesionales cualificados que ofrecen atención de máxima calidad. Nuestro equipo incluye médicos generales y especialistas en áreas como pediatría, ginecología, cardiología, traumatología y dermatología. Puedes solicitar atención con un especialista según disponibilidad.",
+    "labels": [
+      "doctores expertos",
+      "médicos especialistas",
+      "equipo médico",
+      "profesionales salud",
+      "médicos calificados"
+    ]
+  },
+  {
+    "id": "atencion-emergencia",
+    "content": "Ofrecemos atención de emergencia con tratamiento rápido y confiable cuando más lo necesitas. Atendemos emergencias médicas a domicilio en la Región Metropolitana y parte de la 5ta Región, sujeto a disponibilidad y coordinación previa. El costo puede ser mayor que una consulta regular debido a la urgencia y recursos movilizados. Si tienes una emergencia grave, te recomendamos contactar también a los servicios de urgencia locales.",
+    "labels": [
+      "atención emergencia",
+      "urgencia médica",
+      "emergencia domicilio",
+      "consulta urgente",
+      "emergencia médica"
+    ]
+  }
+]

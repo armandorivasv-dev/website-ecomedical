@@ -30,7 +30,7 @@ export const WhatsappFab = () => {
           fontWeight={600}
           color='black'
         >
-          ¿Como podemos ayudarte?
+          AGENDA UNA CITA
         </Typography>
       </Fab>
     </Link>
