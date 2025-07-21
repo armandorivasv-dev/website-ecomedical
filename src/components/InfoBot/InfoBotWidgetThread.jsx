@@ -1,6 +1,6 @@
-import { Box, Typography, useMediaQuery } from '@mui/material';
+import { Box, CircularProgress, Typography, useMediaQuery } from '@mui/material';
 
-export const InfoBotWidgetThread = ({ messages }) => {
+export const InfoBotWidgetThread = ({ messages, isLoading }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
@@ -43,6 +43,11 @@ export const InfoBotWidgetThread = ({ messages }) => {
             </Typography>
           </Box>
         ))
+      )}
+      {isLoading && (
+        <Box sx={{ display: 'flex', justifyContent: 'flex-start', mb: 2 }}>
+          <CircularProgress size={20} />
+        </Box>
       )}
     </Box>
   );

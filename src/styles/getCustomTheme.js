@@ -592,10 +592,7 @@ export default function getCustomTheme(mode) {
             },
             '& .MuiOutlinedInput-root': {
               boxSizing: 'border-box',
-              minWidth: 280,
-              minHeight: 40,
-              height: '100%',
-              borderRadius: '10px',
+              // borderRadius: '10px',
               border: '1px solid',
               borderColor: gray[200],
               transition: 'border-color 120ms ease-in',
@@ -605,20 +602,17 @@ export default function getCustomTheme(mode) {
                 background: `${alpha('#ffffff', 0.3)}`,
               },
               '&:hover': {
-                borderColor: brand[300],
+                borderColor: brand[400],
               },
               '&.Mui-focused': {
                 borderColor: brand[400],
                 outline: '4px solid',
-                outlineColor: brand[200],
+                outlineColor: brand[500],
               },
             },
             ...(theme.palette.mode === 'dark' && {
               '& .MuiOutlinedInput-root': {
                 boxSizing: 'border-box',
-                minWidth: 280,
-                minHeight: 40,
-                height: '100%',
                 borderRadius: '10px',
                 border: '1px solid',
                 borderColor: gray[600],

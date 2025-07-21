@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Box, Button, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, CircularProgress, TextField, Typography, useMediaQuery, Stack } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const InfoBotWidgetComposer = ({ onSend }) => {
+export const InfoBotWidgetComposer = ({ onSend, isLoading }) => {
   const [message, setMessage] = useState('');
 
   const handleChange = (event) => {
@@ -43,15 +43,28 @@ export const InfoBotWidgetComposer = ({ onSend }) => {
           minRows={1}
           maxRows={4}
           size={isMobile ? 'small' : 'medium'}
-          sx={{ backgroundColor: 'white' }}
+          disabled={isLoading}
+          sx={{
+            backgroundColor: 'white',
+            //height: '100%',
+          }}
         />
+
         <Button
           variant='contained'
           onClick={handleSend}
-          disabled={!message.trim()}
+          disabled={!message.trim() || isLoading}
           size={isMobile ? 'medium' : 'large'}
+          //sx={{ height: '100%' }}
         >
-          Enviar
+          {isLoading ? (
+            <CircularProgress
+              size={24}
+              color='inherit'
+            />
+          ) : (
+            'Enviar'
+          )}
         </Button>
       </Box>
       <Stack
