@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery } from '@mui/material';
 
-export const ChatWidgetThread = ({ messages }) => {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
+export const InfoBotWidgetThread = ({ messages }) => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
     <Box
@@ -29,7 +29,7 @@ export const ChatWidgetThread = ({ messages }) => {
             sx={{ mb: 2, textAlign: role === 'user' ? 'right' : 'left' }}
           >
             <Typography
-              variant={mdUp ? 'body1' : 'body2'}
+              variant={isMobile ? 'body2' : 'body1'}
               sx={{
                 display: 'inline-block',
                 bgcolor: role === 'user' ? 'primary.main' : 'white',

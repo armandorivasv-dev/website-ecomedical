@@ -1,8 +1,16 @@
-import { Box, Container, IconButton, Link, Stack, Typography, useMediaQuery } from '@mui/material';
+'use client';
+import { useEffect, useState } from 'react';
+import { Box, Container, IconButton, Link, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import { Instagram } from '@mui/icons-material';
 
 function Copyright() {
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <Typography
       textAlign='center'
@@ -10,8 +18,7 @@ function Copyright() {
       color='text.secondary'
       mt={1}
     >
-      {'Copyright © '}
-      ecomedical {new Date().getFullYear()}
+      {`Copyright © ecomedical ${currentYear}`}
     </Typography>
   );
 }
@@ -35,8 +42,7 @@ function DevelopedBy() {
   );
 }
 
-export default function Footer() {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
+export const Footer = () => {
   return (
     <Container
       sx={{
@@ -62,7 +68,6 @@ export default function Footer() {
             display: 'flex',
             flexDirection: 'column',
             gap: 4,
-
             minWidth: { xs: '100%', md: '20%' },
           }}
         >
@@ -139,7 +144,7 @@ export default function Footer() {
           </Typography>
           <Stack
             direction='row'
-            justifyContent={mdUp ? 'left' : 'center'}
+            justifyContent={{ xs: 'center', md: 'left' }}
             spacing={1}
             useFlexGap
             sx={{
@@ -175,4 +180,4 @@ export default function Footer() {
       </Box>
     </Container>
   );
-}
+};

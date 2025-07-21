@@ -13,26 +13,120 @@
   },
   {
     "id": "precios-ecos",
-    "content": "El precio estándar para exámenes de Ecotomografía (Ecos) en el cordón de la Vespucio es de $85.000, incluyendo el traslado. Fuera de esa zona, el valor puede variar dependiendo de la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica, por favor consulta indicando tu dirección. El precio incluye la realización del examen y la entrega del informe médico.",
+    "content": "El precio estándar para exámenes de Ecotomografía (Ecos) a domicilio en el cordón de la Vespucio es de $85.000 con descuento de un 50% a partir del segundo estudio, incluyendo el traslado. Fuera de esa zona, el valor puede variar dependiendo de la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica, por favor consulta indicando tu dirección. El precio incluye la realización del examen y la entrega del informe médico. Sábado y domingo tendrá un recargo  por día no hábil, favor consulte.",
     "labels": [
       "precio eco",
       "precios ecos",
-      "costo ecotomografía",
       "valor eco",
+      "costo eco",
       "precio ecografía",
-      "precio ecos domicilio"
+      "precio ecos domicilio",
+      "valor ecos domicilio",
+      "precio ecografía domicilio",
+      "precio ecografía"
     ]
   },
   {
     "id": "precios-rayos-x",
-    "content": "El precio para Rayos X de una proyección en el cordón de la Vespucio es de $85.000, incluyendo el traslado y la entrega digital de resultados en 24 horas. Si se requieren más proyecciones en la misma visita, cada proyección adicional tiene un recargo. Fuera del cordón de la Vespucio, el precio puede variar según la distancia o comuna. Si tienes dudas sobre el costo total para tu caso, consulta indicando la cantidad de proyecciones y tu ubicación.",
-    "labels": ["precio rayos x", "precios rayos x", "precio para rayos x", "costo rayos x", "valor rayos x"]
+    "content": "El precio para Rayos X de una proyección a domicilio en el cordón de la Vespucio es de $85.000, incluyendo el traslado y la entrega digital de resultados en 24 horas. Si se requieren más proyecciones en la misma visita, cada proyección adicional tiene un recargo. Fuera del cordón de la Vespucio, el precio puede variar según la distancia o comuna. Si tienes dudas sobre el costo total para tu caso, consulta indicando la cantidad de proyecciones y tu ubicación. En caso de ser dos rayos por la segunda tendría un descuento de 50% y en una 3er se le hace otro descuento adicional favor consultar. Sábado y domingo tendrá un recargo  por día no hábil, favor consulte.",
+    "labels": [
+      "precio rayos x",
+      "precios rayos x",
+      "precio para rayos x",
+      "costo rayos x",
+      "valor rayos x",
+      "precio rayos x domicilio",
+      "valor rayos x domicilio"
+    ]
   },
   {
-    "id": "precios-dopler-colo",
-    "content": "El precio para Doppler color en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo.",
-    "labels": ["precio doppler", "precio doppler color", "costo doppler", "valor doppler", "precios doppler domicilio"]
+    "id": "precios-dopler-color",
+    "content": "El precio para Doppler color a domicilio en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo. En caso de que el estudio sea arterial y venoso se aplica un descuento y quedarian ambos  en 160 mil pesos. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio doppler",
+      "precios doppler",
+      "precio doppler color",
+      "costo doppler",
+      "valor doppler",
+      "precios doppler domicilio",
+      "valor doppler domicilio"
+    ]
   },
+
+  {
+    "id": "precios-ecocardiograma",
+    "content": "El precio para Ecocardiograma a domicilio en el cordón de la Vespucio es de $170.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Ecocardiograma requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio ecocardiograma",
+      "precios ecocardiograma",
+      "costo ecocardiograma",
+      "valor ecocardiograma",
+      "precio ecocardiograma a domicilio",
+      "precios ecocardiograma a domicilio",
+      "valor ecocardiograma a domicilio"
+    ]
+  },
+  {
+    "id": "precios-electrocardiograma",
+    "content": "El precio para Electrocardiograma (ECG) a domicilio en el cordón de la Vespucio es de $50.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Electrocardiograma requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio electrocardiograma",
+      "precios electrocardiograma",
+      "costo electrocardiograma",
+      "valor electrocardiograma",
+      "precio electrocardiograma domicilio",
+      "precio electrocardiograma a domicilio",
+      "precios electrocardiograma domicilio",
+      "valor electrocardiograma domicilio",
+      "valor electrocardiograma a domicilio"
+    ]
+  },
+
+  {
+    "id": "precios-holter-cardiaco",
+    "content": "El precio para Holter cardíaco a domicilio en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio holter cardíaco",
+      "precios holter cardíaco",
+      "costo holter cardíaco",
+      "valor holter cardíaco",
+      "precio holter cardíaco domicilio",
+      "precio holter cardíaco a domicilio",
+      "precios holter cardíaco domicilio",
+      "valor holter cardíaco domicilio"
+    ]
+  },
+
+  {
+    "id": "precios-holter-presion",
+    "content": "El precio para Holter de presión a domicilio en el cordón de la Vespucio es de $95.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Holter requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio holter presión",
+      "precios holter presión",
+      "costo holter presión",
+      "valor holter presión",
+      "precio holter presión domicilio",
+      "precio holter presión a domicilio",
+      "precios holter presión domicilio",
+      "valor holter presión domicilio"
+    ]
+  },
+
+  {
+    "id": "precios-medicina-general",
+    "content": "El precio para Medicina General a domicilio en el cordón de la Vespucio es de $50.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio medicina general",
+      "precios medicina general",
+      "costo medicina general",
+      "valor medicina general",
+      "precio medicina general domicilio",
+      "precio medicina general a domicilio",
+      "precios medicina general domicilio",
+      "valor medicina general domicilio"
+    ]
+  },
+
   {
     "id": "medios-de-pago",
     "content": "Aceptamos una amplia variedad de medios de pago para tu comodidad: tarjetas de crédito (Visa, MasterCard, American Express), tarjetas de débito de cualquier banco y transferencias electrónicas. Si necesitas factura o boleta, indícalo al momento de agendar. En casos excepcionales, se puede coordinar pago en efectivo, sujeto a confirmación previa.",
@@ -45,6 +139,7 @@
       "pago efectivo"
     ]
   },
+
   {
     "id": "ecotomografia-general",
     "content": "Ofrecemos el servicio de Ecotomografía general a domicilio, ideal para quienes requieren estudios sin desplazarse a un centro médico. Realizamos estudios abdominales, tiroideos, pelvianos (femenino y masculino), renales, de cuello, inguinales, testiculares, pared abdominal y partes blandas. El examen se realiza con equipos portátiles de alta resolución y el informe se entrega en formato digital. Si tienes dudas sobre la preparación o el tipo de ecografía que necesitas, consulta con nuestro equipo antes de agendar.",
@@ -82,8 +177,8 @@
   },
   {
     "id": "ecocardiograma",
-    "content": "El servicio de Ecocardiograma permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio.",
-    "labels": ["ecocardiograma", "eco corazón", "ultrasonido cardíaco", "examen corazón", "ecocardiograma domicilio"]
+    "content": "El servicio de Ecocardiograma permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio. Consulte también por nuestro servicio de telemedicina cardiograma a domicilio.",
+    "labels": ["ecocardiograma", "ecocardiograma domicilio"]
   },
   {
     "id": "electrocardiograma",
@@ -189,6 +284,19 @@
       "emergencia domicilio",
       "consulta urgente",
       "emergencia médica"
+    ]
+  },
+  {
+    "id": "telemedicina-cardiologia",
+    "content": "Ofrecemos consultas de telemedicina en cardiología, permitiendo a los pacientes recibir atención especializada sin necesidad de desplazarse. Puedes agendar una cita virtual con nuestros cardiólogos para evaluar síntomas, revisar exámenes previos y recibir recomendaciones personalizadas. Las consultas se realizan a través de videollamada segura y son ideales para seguimiento de enfermedades cardíacas o evaluación de nuevos síntomas. Para este tipo de atención, es importante contar con una buena conexión a internet y estudios previos como electrocardiograma laboratorio entre otros.",
+    "labels": [
+      "telemedicina cardiología",
+      "telemedicina cardiología a domicilio",
+      "consulta virtual cardiología",
+      "cardiología",
+      "cardiologia",
+      "cardiología domicilio",
+      "cardiología a domicilio"
     ]
   }
 ]

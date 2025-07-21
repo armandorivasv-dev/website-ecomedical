@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   IconButton,
@@ -14,17 +14,19 @@ import {
   AppBar,
   Box,
   Menu,
+  useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import Image from 'next/image';
-import { ContactForm } from '@/components/contact-form';
+import Link from 'next/link';
+import { ContactForm } from '@/components/ContactForm';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Instagram } from '@mui/icons-material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import Link from 'next/link';
 
-const menuItems = [
+const MENU_ITEMS = [
   {
     id: 0,
     title: 'Inicio',
@@ -47,10 +49,17 @@ const menuItems = [
   },
 ];
 
-function TopNav({ mode }) {
+export const TopNav = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [openContactForm, setOpenContactForm] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'));
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleOpenContactForm = () => setOpenContactForm(true);
   const handleCloseContactForm = () => setOpenContactForm(false);
@@ -72,7 +81,6 @@ function TopNav({ mode }) {
     const offset = 128;
     if (sectionElement) {
       const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
       window.scrollTo({
         top: targetScroll,
         behavior: 'smooth',
@@ -81,13 +89,16 @@ function TopNav({ mode }) {
     }
   };
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <>
       <AppBar
         position='fixed'
-        sx={(theme) => ({
-          boxShadow: 0,
-          bgcolor: 'white',
+        sx={{
+          bgcolor: 'background.paper',
           backgroundImage: 'none',
           width: '100%',
           borderBottom: '1px solid',
@@ -97,25 +108,23 @@ function TopNav({ mode }) {
             theme.palette.mode === 'light'
               ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
               : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
-        })}
+        }}
       >
         <Box
-          id='home'
           sx={{
             flexGrow: 1,
-            display: 'flex',
-            direction: 'row',
+            display: mdUp ? 'flex' : 'none',
             alignItems: 'center',
             justifyContent: 'space-around',
-            py: { xs: 1, md: 2 },
-            px: { xs: 2, md: 30 },
+            py: mdUp ? 2 : 1,
+            px: mdUp ? 0 : 2,
             backgroundColor: 'black',
             width: '100%',
           }}
         >
           <Stack
-            direction={{ xs: 'column', md: 'row' }}
-            spacing={{ xs: 0, md: 4 }}
+            direction={mdUp ? 'row' : 'column'}
+            spacing={mdUp ? 4 : 0}
           >
             <Stack
               direction={'row'}
@@ -123,7 +132,7 @@ function TopNav({ mode }) {
               justifyContent={'center'}
               alignItems={'center'}
             >
-              <LocationOnIcon />
+              <LocationOnIcon sx={{ color: 'white' }} />
               <Typography
                 variant='caption'
                 color='white'
@@ -131,7 +140,6 @@ function TopNav({ mode }) {
                 Presidente Ríos 58, Santiago
               </Typography>
             </Stack>
-
             <Link
               href='mailto:ecomedical.cl@gmail.com'
               style={{ textDecoration: 'none' }}
@@ -143,7 +151,6 @@ function TopNav({ mode }) {
                 alignItems={'center'}
               >
                 <EmailIcon sx={{ color: 'white' }} />
-
                 <Typography
                   variant='caption'
                   color='white'
@@ -152,7 +159,6 @@ function TopNav({ mode }) {
                 </Typography>
               </Stack>
             </Link>
-
             <Link
               href='https://wa.me/56977013227'
               target='_blank'
@@ -178,19 +184,18 @@ function TopNav({ mode }) {
         <Container maxWidth='lg'>
           <Toolbar
             variant='regular'
-            sx={(theme) => ({
+            sx={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
               width: '100%',
-              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255)' : 'rgba(0, 0, 0, 0.4)',
+              bgcolor: theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.4)',
               backdropFilter: 'blur(24px)',
               maxHeight: 40,
-            })}
+            }}
           >
             <Box
-              id='home'
               sx={{
                 flexGrow: 1,
                 display: 'flex',
@@ -201,14 +206,14 @@ function TopNav({ mode }) {
             >
               <Image
                 src='/assets/logos/ecomedical-logo.png'
-                width={286 * 0.8}
-                height={63 * 0.8}
+                width={mdUp ? 286 * 0.8 : 286 * 0.6}
+                height={mdUp ? 63 * 0.8 : 63 * 0.6}
                 alt='ecomedical atención medica a domicilio'
                 priority={true}
               />
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                {menuItems.map((item, index) => (
-                  <div key={index}>
+              <Box sx={{ display: mdUp ? 'flex' : 'none' }}>
+                {MENU_ITEMS.map((item) => (
+                  <React.Fragment key={item.id}>
                     {item.submenu ? (
                       <>
                         <MenuItem
@@ -259,7 +264,7 @@ function TopNav({ mode }) {
                         </Typography>
                       </MenuItem>
                     )}
-                  </div>
+                  </React.Fragment>
                 ))}
                 <MenuItem
                   onClick={handleOpenContactForm}
@@ -274,7 +279,7 @@ function TopNav({ mode }) {
                 </MenuItem>
               </Box>
             </Box>
-            <Box sx={{ display: { xs: '', md: 'none' } }}>
+            <Box sx={{ display: mdUp ? 'none' : 'flex' }}>
               <Button
                 variant='text'
                 color='primary'
@@ -304,8 +309,8 @@ function TopNav({ mode }) {
                     alt='ecomedical atención medica a domicilio'
                     priority={true}
                   />
-                  {menuItems.map((item, index) => (
-                    <div key={index}>
+                  {MENU_ITEMS.map((item) => (
+                    <React.Fragment key={item.id}>
                       {item.submenu ? (
                         <>
                           <MenuItem
@@ -356,7 +361,7 @@ function TopNav({ mode }) {
                           </Typography>
                         </MenuItem>
                       )}
-                    </div>
+                    </React.Fragment>
                   ))}
                   <MenuItem
                     onClick={handleOpenContactForm}
@@ -374,9 +379,7 @@ function TopNav({ mode }) {
                     direction='row'
                     justifyContent='center'
                     spacing={1}
-                    sx={{
-                      color: 'text.secondary',
-                    }}
+                    sx={{ color: 'text.secondary' }}
                   >
                     <IconButton
                       href='https://www.instagram.com/ecomedical.cl/'
@@ -399,10 +402,4 @@ function TopNav({ mode }) {
       />
     </>
   );
-}
-
-TopNav.propTypes = {
-  mode: PropTypes.oneOf(['dark', 'light']).isRequired,
 };
-
-export default TopNav;

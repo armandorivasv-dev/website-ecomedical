@@ -1,7 +1,8 @@
-import { Container, Typography, CardContent, Card, useMediaQuery, Stack } from '@mui/material';
+'use client';
+import { Container, Typography, CardContent, Card, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import { green } from '@/styles/get-custom-theme';
+import { green } from '@/styles/getCustomTheme';
 
 const cardData = [
   {
@@ -18,7 +19,7 @@ const cardData = [
   },
   {
     id: '03.',
-    title: 'Ecotomografía Doppler colo',
+    title: 'Ecotomografía Doppler color',
     description:
       'Doppler arterial y venoso de miembros inferiores y superiores, Doppler carotideo y vertebral, Doppler testicular, Doppler descarte de TVP. Doppler partes blandas.',
   },
@@ -63,7 +64,6 @@ const cardData = [
 ];
 
 export const Services = () => {
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   return (
     <Container
       id='services'
@@ -100,7 +100,7 @@ export const Services = () => {
               </Typography>
             </Stack>
             <Typography
-              variant={mdUp ? 'h3' : 'h4'}
+              variant={{ xs: 'h4', md: 'h3' }}
               textAlign='center'
               color='white'
             >

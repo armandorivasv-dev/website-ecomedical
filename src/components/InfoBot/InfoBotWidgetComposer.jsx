@@ -3,7 +3,7 @@ import { Box, Button, Stack, TextField, Typography, useMediaQuery } from '@mui/m
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const ChatWidgetComposer = ({ onSend }) => {
+export const InfoBotWidgetComposer = ({ onSend }) => {
   const [message, setMessage] = useState('');
 
   const handleChange = (event) => {
@@ -28,7 +28,7 @@ export const ChatWidgetComposer = ({ onSend }) => {
     }
   };
 
-  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
     <Box sx={{ backgroundColor: 'grey.200' }}>
@@ -42,14 +42,14 @@ export const ChatWidgetComposer = ({ onSend }) => {
           multiline
           minRows={1}
           maxRows={4}
-          size={mdUp ? 'medium' : 'small'}
+          size={isMobile ? 'small' : 'medium'}
           sx={{ backgroundColor: 'white' }}
         />
         <Button
           variant='contained'
           onClick={handleSend}
           disabled={!message.trim()}
-          size={mdUp ? 'large' : 'medium'}
+          size={isMobile ? 'medium' : 'large'}
         >
           Enviar
         </Button>
@@ -59,7 +59,7 @@ export const ChatWidgetComposer = ({ onSend }) => {
         alignItems='center'
         justifyContent='center'
         spacing={1}
-        sx={{ paddingBottom: mdUp ? 2 : 1 }}
+        sx={{ paddingBottom: { xs: 1, md: 2 } }}
       >
         <Image
           src='/assets/logos/armandorivasv-dev-isotipo-xxs.png'
@@ -69,7 +69,7 @@ export const ChatWidgetComposer = ({ onSend }) => {
         />
         <Typography
           textAlign='center'
-          variant={mdUp ? 'body1' : 'body2'}
+          variant={isMobile ? 'body2' : 'body1'}
           color='text.secondary'
         >
           {'Powered by '}

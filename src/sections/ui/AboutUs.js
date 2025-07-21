@@ -1,10 +1,13 @@
-import { Container, Typography, Stack, Button } from '@mui/material';
+'use client';
+import { Container, Typography, Stack, Button, useMediaQuery } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
 
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 export const AboutUs = () => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
   return (
     <Container
       id='about-us'
@@ -53,8 +56,8 @@ export const AboutUs = () => {
               </Typography>
             </Stack>
             <Typography
-              variant='h4'
-              sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h3 } })}
+              variant={isMobile ? 'h4' : 'h3'}
+              sx={{ pt: 1 }}
             >
               EcoMedical crea un entorno seguro, tu salud es nuestra prioridad
             </Typography>
@@ -80,8 +83,8 @@ export const AboutUs = () => {
                 />
 
                 <Typography
-                  variant='h4'
-                  sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h6 } })}
+                  variant={isMobile ? 'h4' : 'h6'}
+                  sx={{ pt: 1 }}
                 >
                   Nuestra Visión
                 </Typography>
@@ -103,8 +106,8 @@ export const AboutUs = () => {
                 />
 
                 <Typography
-                  variant='h4'
-                  sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h6 } })}
+                  variant={isMobile ? 'h4' : 'h6'}
+                  sx={{ pt: 1 }}
                 >
                   Nuestra Misión
                 </Typography>

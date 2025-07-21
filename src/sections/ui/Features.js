@@ -1,7 +1,8 @@
+'use client';
 import { Container, Typography, CardContent, Card, Stack } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Image from 'next/image';
-import { green } from '@/styles/get-custom-theme';
+import { green } from '@/styles/getCustomTheme';
 
 const cardData = [
   {
@@ -40,7 +41,7 @@ export const Features = () => {
             size={{ xs: 12, md: 12 }}
             container
             spacing={4}
-            marginTop={{ xs: 2, md: 0 }}
+            sx={{ marginTop: { xs: 2, md: 0 } }}
           >
             {cardData.map((item, index) => (
               <Grid

@@ -1,10 +1,12 @@
-import React from 'react';
+'use client';
 import Fab from '@mui/material/Fab';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
 
-export const WhatsappFab = () => {
+export const WhatsappWidget = () => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
   return (
     <Link
       href='https://wa.me/56977013227'
@@ -17,17 +19,16 @@ export const WhatsappFab = () => {
         aria-label='Contacto WhatsApp'
         sx={{
           position: 'fixed',
-          bottom: 16,
+          bottom: { xs: 5, md: 16 },
           right: 16,
           '&:hover': {
             backgroundColor: 'white',
           },
         }}
       >
-        <WhatsAppIcon sx={{ mr: 1, color: 'black' }} />
+        <WhatsAppIcon sx={{ mr: 2, color: 'black', fontSize: { xs: 25, md: 35 } }} />
         <Typography
-          variant='body1'
-          fontWeight={600}
+          variant={isMobile ? 'body1' : 'subtitle1'}
           color='black'
         >
           AGENDA UNA CITA

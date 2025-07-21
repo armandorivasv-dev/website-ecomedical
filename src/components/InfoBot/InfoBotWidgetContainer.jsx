@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
-import { ChatWidgetThread } from './ChatWidgetThread';
-import { ChatWidgetComposer } from './ChatWidgetComposer';
 import { useChatMessages } from '@/hooks/useChatMessages';
+import { InfoBotWidgetThread } from './InfoBotWidgetThread';
+import { InfoBotWidgetComposer } from './InfoBotWidgetComposer';
 
-export const ChatWidgetInterface = () => {
+export const InfoBotWidgetContainer = () => {
   const { messages, addUserMessage, addIaMessage } = useChatMessages();
 
   const handleSend = async (userMessage) => {
@@ -26,8 +26,8 @@ export const ChatWidgetInterface = () => {
   return (
     // Usamos un Box con flex para que ocupe todo el espacio del Paper
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <ChatWidgetThread messages={messages} />
-      <ChatWidgetComposer onSend={handleSend} />
+      <InfoBotWidgetThread messages={messages} />
+      <InfoBotWidgetComposer onSend={handleSend} />
     </Box>
   );
 };

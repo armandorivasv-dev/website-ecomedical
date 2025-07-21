@@ -113,14 +113,14 @@ const getDesignTokens = (mode) => ({
     },
     divider: mode === 'dark' ? alpha(gray[600], 0.3) : alpha(gray[300], 0.5),
     background: {
-      default: '#fff',
+      default: '#ffffff',
       paper: gray[50],
       ...(mode === 'dark' && { default: gray[900], paper: gray[800] }),
     },
     text: {
       primary: gray[800],
       secondary: gray[600],
-      ...(mode === 'dark' && { primary: '#fff', secondary: gray[400] }),
+      ...(mode === 'dark' && { primary: '#ffffff', secondary: gray[400] }),
     },
     action: {
       selected: `${alpha(brand[200], 0.2)}`,
@@ -227,7 +227,7 @@ export default function getCustomTheme(mode) {
           root: ({ theme }) => ({
             padding: 8,
             overflow: 'clip',
-            backgroundColor: '#fff',
+            backgroundColor: '#ffffff',
             border: '1px solid',
             borderColor: gray[100],
             ':before': {
@@ -275,7 +275,7 @@ export default function getCustomTheme(mode) {
             },
             ...(theme.palette.mode === 'dark' && {
               '& .Mui-selected': {
-                color: '#fff',
+                color: '#ffffff',
               },
               boxShadow: `0 4px 16px ${alpha(brand[700], 0.5)}`,
             }),
@@ -388,7 +388,7 @@ export default function getCustomTheme(mode) {
             boxShadow: 'none',
             transition: 'background-color, border, 80ms ease',
             ...(ownerState.variant === 'outlined' && {
-              background: `linear-gradient(to bottom, #FFF, ${gray[50]})`,
+              background: `linear-gradient(to bottom, #ffffff, ${gray[50]})`,
               '&:hover': {
                 borderColor: brand[300],
                 boxShadow: `0 0 24px ${brand[100]}`,
@@ -538,7 +538,7 @@ export default function getCustomTheme(mode) {
             },
             '& .MuiSwitch-thumb': {
               boxShadow: '0 0 2px 2px rgba(0, 0, 0, 0.2)',
-              backgroundColor: '#FFF',
+              backgroundColor: '#ffffff',
               width: 16,
               height: 16,
               margin: 2,
@@ -560,7 +560,7 @@ export default function getCustomTheme(mode) {
               },
               '& .MuiSwitch-thumb': {
                 boxShadow: '0 0 2px 2px rgba(0, 0, 0, 0.2)',
-                backgroundColor: '#FFF',
+                backgroundColor: '#ffffff',
                 width: 16,
                 height: 16,
                 margin: 2,
@@ -571,7 +571,7 @@ export default function getCustomTheme(mode) {
             height: 24,
             width: 24,
             padding: 0,
-            color: '#fff',
+            color: '#ffffff',
             '&.Mui-checked + .MuiSwitch-track': {
               opacity: 1,
             },
@@ -582,7 +582,7 @@ export default function getCustomTheme(mode) {
         styleOverrides: {
           root: ({ theme }) => ({
             '& label .Mui-focused': {
-              color: 'white',
+              color: '#ffffff',
             },
             '& .MuiInputBase-input': {
               boxSizing: 'border-box',
@@ -602,7 +602,7 @@ export default function getCustomTheme(mode) {
               '& fieldset': {
                 border: 'none',
                 boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-                background: `${alpha('#FFF', 0.3)}`,
+                background: `${alpha('#ffffff', 0.3)}`,
               },
               '&:hover': {
                 borderColor: brand[300],

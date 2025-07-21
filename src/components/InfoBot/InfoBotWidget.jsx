@@ -1,0 +1,69 @@
+'use client';
+import { useState } from 'react';
+import { Box, Fab, Fade, Paper, Typography, useMediaQuery } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+
+import { InfoBotWidgetContainer } from '@/components/InfoBot/InfoBotWidgetContainer';
+
+export const InfoBotWidget = () => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleChat = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  return (
+    <>
+      {/* Ventana del Chat */}
+      <Fade in={isOpen}>
+        <Paper
+          elevation={8}
+          sx={{
+            position: 'fixed',
+            bottom: '140px',
+            right: { xs: '5%', md: '2%' },
+            width: { xs: '90%', md: '470px' },
+            height: { xs: '70vh', md: '80vh' },
+            maxHeight: '800px',
+            display: 'flex',
+            flexDirection: 'column',
+            borderRadius: '16px',
+            overflow: 'hidden',
+            zIndex: 1300,
+          }}
+        >
+          <InfoBotWidgetContainer />
+        </Paper>
+      </Fade>
+
+      {/* Botón Flotante */}
+      <Fab
+        variant='extended'
+        color='primary'
+        aria-label='Agente RAG'
+        onClick={toggleChat}
+        sx={{
+          position: 'fixed',
+          bottom: { xs: 66, md: 86 },
+          right: 16,
+          zIndex: 1301,
+        }}
+      >
+        {isOpen ? (
+          <CloseIcon sx={{ mr: 2, color: 'white', fontSize: { xs: 25, md: 35 } }} />
+        ) : (
+          <AutoAwesomeIcon sx={{ mr: 2, color: 'white', fontSize: { xs: 25, md: 35 } }} />
+        )}
+        <Typography
+          variant={isMobile ? 'body1' : 'subtitle1'}
+          color='white'
+        >
+          ASISTENTE DE CONSULTAS
+        </Typography>
+      </Fab>
+    </>
+  );
+};

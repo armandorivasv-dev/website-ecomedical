@@ -1,22 +1,23 @@
+'use client';
 import { useState } from 'react';
-import { Box, Stack, Typography, Button, Container } from '@mui/material';
-import { ContactForm } from '../components/contact-form';
+import { Box, Stack, Typography, Button, Container, useMediaQuery } from '@mui/material';
+import { ContactForm } from '../../components/ContactForm';
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import { green } from '@/styles/get-custom-theme';
+import { green } from '@/styles/getCustomTheme';
 
 export const Hero = () => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
   const style = {
     height: '100vh',
     width: '100%',
     backgroundSize: 'cover',
-
     backgroundImage: {
       xs: `url('/assets/images/ecomedical-atencion-medica-domicilio-hero-mobile.png')`,
       md: `url('/assets/images/ecomedical-atencion-medica-domicilio-hero-desktop.png')`,
     },
     position: 'relative',
-
     backgroundPosition: { xs: 'center', md: 'top left' },
     backgroundRepeat: 'no-repeat',
 
@@ -53,24 +54,21 @@ export const Hero = () => {
           sx={{
             position: 'relative',
             zIndex: 2,
-            paddingLeft: { xs: 4, md: 8 },
+            paddingLeft: { xs: 0, md: 8 },
           }}
         >
           <Stack
             direction='row'
             alignItems='center'
             spacing={1}
-            sx={{ pt: { xs: '22vh', md: '30vh' } }}
+            sx={{ pt: { xs: '10vh', md: '20vh' } }}
           >
             <LocalHospitalIcon
               color='primary'
               sx={{ color: green[300] }}
             />
             <Typography
-              variant='subtitle1'
-              sx={(theme) => ({
-                [theme.breakpoints.up('md')]: { ...theme.typography.h6 },
-              })}
+              variant={isMobile ? 'subtitle1' : 'h6'}
               color={green[300]}
               maxWidth={600}
               textAlign='left'
@@ -80,27 +78,22 @@ export const Hero = () => {
           </Stack>
 
           <Typography
-            variant='h4'
-            sx={(theme) => ({
-              [theme.breakpoints.up('md')]: { ...theme.typography.h1 },
-            })}
+            variant={isMobile ? 'h4' : 'h1'}
             color='white'
             textAlign='left'
             maxWidth={600}
           >
-            Estamos aquí para escuchar y sanar sus problemas de salud
+            Servicios Médicos a Domicilio y Telemedicina de Cardiología en la comodidad de su hogar.
           </Typography>
 
           <Typography
-            variant='subtitle1'
+            variant={isMobile ? 'subtitle1' : 'h6'}
             color='white'
             maxWidth={600}
             textAlign='left'
-            sx={(theme) => ({
-              [theme.breakpoints.up('md')]: { ...theme.typography.h6 },
-            })}
           >
-            EcoMedical - Su socio de confianza en el cuidado de la salud
+            Realización de Ecotomografias Generales, Ecotomografía Doppler color y Ecocardiograma, Holters cardiacos y
+            de ritmo, y Electrocardiograma.
           </Typography>
           <Typography
             variant='subtitle2'
@@ -108,11 +101,10 @@ export const Hero = () => {
             maxWidth={600}
             textAlign='left'
           >
-            Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud,
-            nuestra prioridad.
+            Servicio de Rayos X Digital, Laboratorio, y Medicina General.
           </Typography>
           <Stack
-            direction={{ xs: 'row', md: 'row' }}
+            direction='row'
             spacing={2}
             sx={{ pt: { xs: 0, md: 2 } }}
           >
@@ -135,11 +127,11 @@ export const Hero = () => {
           </Stack>
         </Stack>
         <Box
-          display={{ xs: 'none', md: 'block' }}
-          position='absolute'
-          bottom={{ xs: '10vh', md: '1vh' }}
-          left={{ xs: '45vw', md: '50vw' }}
           sx={{
+            display: { xs: 'none', md: 'block' },
+            position: 'absolute',
+            bottom: { xs: '10vh', md: '1vh' },
+            left: { xs: '45vw', md: '50vw' },
             zIndex: 2,
           }}
         >

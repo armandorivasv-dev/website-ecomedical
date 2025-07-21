@@ -1,7 +1,8 @@
+'use client';
 import { Container, Typography, CardContent, Card, Stack, Button } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import { green } from '@/styles/get-custom-theme';
+import { green } from '@/styles/getCustomTheme';
 
 const cardData = [
   {
@@ -65,8 +66,8 @@ export const Steps = () => {
               </Typography>
             </Stack>
             <Typography
-              variant='h4'
-              sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h3 } })}
+              variant={{ xs: 'h4', md: 'h3' }}
+              sx={{ pt: 1 }}
               maxWidth={500}
             >
               Atención médica confiable enfocada en su bienestar

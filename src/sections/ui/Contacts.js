@@ -1,10 +1,13 @@
-import { Container, Typography, Stack, Button } from '@mui/material';
+'use client';
+import { Container, Typography, Stack, Button, useMediaQuery } from '@mui/material';
 import Grid from '@mui/material/Grid';
-import { green } from '@/styles/get-custom-theme';
+import { green } from '@/styles/getCustomTheme';
 import HeadsetIcon from '@mui/icons-material/Headset';
 import Link from 'next/link';
 
 export const Contacts = () => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
   return (
     <Container
       id='services'
@@ -22,8 +25,8 @@ export const Contacts = () => {
             direction={'column'}
           >
             <Typography
-              variant='h5'
-              sx={(theme) => ({ pt: 1, [theme.breakpoints.up('md')]: { ...theme.typography.h4 } })}
+              variant={isMobile ? 'h5' : 'h4'}
+              sx={{ pt: 1 }}
               color={green[300]}
               textAlign='left'
             >
@@ -58,8 +61,7 @@ export const Contacts = () => {
                   }}
                 />
                 <Typography
-                  variant='h4'
-                  sx={(theme) => ({ [theme.breakpoints.up('md')]: { ...theme.typography.h2 } })}
+                  variant={isMobile ? 'h4' : 'h2'}
                   color='white'
                   maxWidth={600}
                   textAlign='left'
@@ -72,16 +74,14 @@ export const Contacts = () => {
 
           <Grid size={{ xs: 12, md: 6 }}>
             <Typography
-              variant='h5'
-              sx={(theme) => ({ [theme.breakpoints.up('md')]: { ...theme.typography.h4 } })}
+              variant={isMobile ? 'h5' : 'h4'}
               color={green[300]}
               textAlign='left'
             >
               Cobertura
             </Typography>
             <Typography
-              variant='h4'
-              sx={(theme) => ({ [theme.breakpoints.up('md')]: { ...theme.typography.h2 } })}
+              variant={isMobile ? 'h4' : 'h2'}
               color='white'
               maxWidth={600}
               textAlign='left'
