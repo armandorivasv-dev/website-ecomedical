@@ -128,6 +128,23 @@
   },
 
   {
+    "id": "precios-telemedicina-cardiologia",
+    "content": "El precio para Telemedicina en Cardiología es de $55.000, Horario de atención: lunes a viernes de 18:30 a 20:00. Sábado y domingo tendrá un recargo  por día no hábil previo acuerdo con el paciente. Para este tipo de atención, es importante contar con una buena conexión a internet y en algunos casos antecedentes y estudios previos, por favor consulte.",
+    "labels": [
+      "precio telemedicina",
+      "precio cardiología",
+      "precio telemedicina cardiología",
+      "precios telemedicina cardiología",
+      "costo telemedicina cardiología",
+      "valor telemedicina cardiología",
+      "precio telemedicina cardiología domicilio",
+      "precio telemedicina cardiología a domicilio",
+      "precios telemedicina cardiología domicilio",
+      "valor telemedicina cardiología domicilio"
+    ]
+  },
+
+  {
     "id": "medios-de-pago",
     "content": "Aceptamos una amplia variedad de medios de pago para tu comodidad: tarjetas de crédito (Visa, MasterCard, American Express), tarjetas de débito de cualquier banco y transferencias electrónicas. Si necesitas factura o boleta, indícalo al momento de agendar. En casos excepcionales, se puede coordinar pago en efectivo, sujeto a confirmación previa.",
     "labels": [
@@ -288,7 +305,7 @@
   },
   {
     "id": "telemedicina-cardiologia",
-    "content": "Ofrecemos consultas de telemedicina en cardiología, permitiendo a los pacientes recibir atención especializada sin necesidad de desplazarse. Puedes agendar una cita virtual con nuestros cardiólogos para evaluar síntomas, revisar exámenes previos y recibir recomendaciones personalizadas. Las consultas se realizan a través de videollamada segura y son ideales para seguimiento de enfermedades cardíacas o evaluación de nuevos síntomas. Para este tipo de atención, es importante contar con una buena conexión a internet y estudios previos como electrocardiograma laboratorio entre otros.",
+    "content": "Ofrecemos consultas de telemedicina en cardiología, permitiendo a los pacientes recibir atención especializada sin necesidad de desplazarse. Puedes agendar una cita virtual con nuestros cardiólogos para evaluar síntomas, revisar exámenes previos y recibir recomendaciones personalizadas. Las consultas se realizan a través de videollamada segura y son ideales para seguimiento de enfermedades cardíacas o evaluación de nuevos síntomas. Para este tipo de atención, es importante contar con una buena conexión a internet y el algunos casos antecedentes y estudios previos favor consulte.",
     "labels": [
       "telemedicina cardiología",
       "telemedicina cardiología a domicilio",

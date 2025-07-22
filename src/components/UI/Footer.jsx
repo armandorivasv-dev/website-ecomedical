@@ -167,7 +167,7 @@ export const Footer = () => {
           display: 'flex',
           justifyContent: 'center',
           pt: { xs: 4, sm: 2 },
-          pb: { xs: 4, md: 0 },
+          pb: { xs: 10, md: 0 },
           width: '100%',
           borderTop: '1px solid',
           borderColor: 'divider',

@@ -3,9 +3,10 @@ import { Box } from '@mui/material';
 import { useChatMessages } from '@/hooks/useChatMessages';
 import { InfoBotWidgetThread } from './InfoBotWidgetThread';
 import { InfoBotWidgetComposer } from './InfoBotWidgetComposer';
+import { InfoBotWidgetHeader } from './InfoBotWidgetHeader';
 
-export const InfoBotWidgetContainer = () => {
-  const { messages, addUserMessage, addIaMessage } = useChatMessages();
+export const InfoBotWidgetContainer = ({ onClose }) => {
+  const { messages, addUserMessage, addInfobotMessage } = useChatMessages();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSend = async (userMessage) => {
@@ -19,18 +20,18 @@ export const InfoBotWidgetContainer = () => {
       });
       if (!response.ok) throw new Error('Error en la respuesta del servidor');
       const data = await response.json();
-      addIaMessage(data.answer);
+      addInfobotMessage(data.answer);
     } catch (error) {
       console.error('Error al contactar la API:', error);
-      addIaMessage('Lo siento, ocurrió un error.');
+      addInfobotMessage('Lo siento, ocurrió un error.');
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    // Usamos un Box con flex para que ocupe todo el espacio del Paper
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <InfoBotWidgetHeader onClose={onClose} />
       <InfoBotWidgetThread
         messages={messages}
         isLoading={isLoading}

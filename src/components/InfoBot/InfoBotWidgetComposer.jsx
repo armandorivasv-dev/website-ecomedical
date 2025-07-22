@@ -31,14 +31,14 @@ export const InfoBotWidgetComposer = ({ onSend, isLoading }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   return (
-    <Box sx={{ backgroundColor: 'grey.200' }}>
+    <Box sx={{ backgroundColor: 'grey.100', borderTop: '1px solid', borderColor: 'grey.300' }}>
       <Box sx={{ display: 'flex', gap: 1, p: 2 }}>
         <TextField
           fullWidth
           value={message}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-          placeholder='Escribe tu mensaje...'
+          placeholder='Escribe tu consulta...'
           multiline
           minRows={1}
           maxRows={4}
@@ -82,7 +82,7 @@ export const InfoBotWidgetComposer = ({ onSend, isLoading }) => {
         />
         <Typography
           textAlign='center'
-          variant={isMobile ? 'body2' : 'body1'}
+          variant='caption'
           color='text.secondary'
         >
           {'Powered by '}

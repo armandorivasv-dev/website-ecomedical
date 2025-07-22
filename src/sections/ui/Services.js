@@ -48,18 +48,20 @@ const cardData = [
   {
     id: '08.',
     title: 'Rayos x',
-    description: 'Radiologia general, tórax, cráneo, y en general.',
+    description:
+      'Radiología digital de alta resolución de tórax ap y lateral, así como de todo del sistema óseo, con entrega de resultado en 24 horas.',
   },
   {
     id: '09.',
     title: 'Laboratorio',
-    description: 'Toma de muestras con resultados entregados en casa.',
+    description:
+      'Toma de muestras de sangre, orina, cultivos, en casa con entrega de resultado en el transcurso del día.',
   },
   {
     id: '10.',
     title: ' Medicina general',
     description:
-      'Monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio.',
+      'Atención médica integral para adultos y niños, abordando diversas patologías y consultas en el hogar.',
   },
 ];
 

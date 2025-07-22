@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 const INITIAL_MESSAGES = [
   {
-    id: 'test-1',
-    role: 'ia',
+    id: 'bienvenida',
+    role: 'infobot',
     content: '¡Hola! Soy tu asistente de Consultas Médicas. ¿En qué puedo ayudarte hoy?',
   },
 ];
@@ -16,11 +16,11 @@ export const useChatMessages = () => {
     setMessages((prev) => [...prev, { id: crypto.randomUUID(), role: 'user', content }]);
   };
 
-  const addIaMessage = (content) => {
-    setMessages((prev) => [...prev, { id: crypto.randomUUID(), role: 'ia', content }]);
+  const addInfobotMessage = (content) => {
+    setMessages((prev) => [...prev, { id: crypto.randomUUID(), role: 'infobot', content }]);
   };
 
   const clearMessages = () => setMessages(INITIAL_MESSAGES);
 
-  return { messages, addUserMessage, addIaMessage, clearMessages };
+  return { messages, addUserMessage, addInfobotMessage, clearMessages };
 };

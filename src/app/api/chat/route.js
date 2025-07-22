@@ -8,8 +8,10 @@ const KNOWLEDGE_PATH = path.resolve(process.cwd(), 'src/knowledge/knowledge.json
 const VECTORS_PATH = path.resolve(process.cwd(), 'src/knowledge/vectors.json');
 const MODEL_NAME = 'Xenova/all-MiniLM-L6-v2';
 const SIMILARITY_THRESHOLD = 0.5;
+const FALLBACK_ANSWER =
+  'Lo siento, su pregunta no se encuentra en nuestra base de conocimientos. Si deseas contactar con un médico especialista que responda tu inquietud, envía un mensaje a nuestro WhatsApp en el botón: AGENDA UNA CITA.';
 
-// Constantes para la limitación de tasa (Rate Limiting)
+// --- Rate Limiting (sin cambios) ---
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minuto
 const RATE_LIMIT_MAX_REQUESTS = 10;
 const rateLimitMap = new Map();
@@ -37,6 +39,7 @@ const isRateLimited = (ip) => {
   return false;
 };
 
+// --- Funciones de Utilidad (sin cambios) ---
 const cosineSimilarity = (vectorA, vectorB) => {
   const dotProduct = vectorA.reduce((sum, a, i) => sum + a * vectorB[i], 0);
   const normA = Math.sqrt(vectorA.reduce((sum, a) => sum + a * a, 0));
@@ -61,6 +64,7 @@ const normalizeText = (text) =>
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^\w\s]|_/g, '');
 
+// --- Lógica de Fallback (sin cambios) ---
 const keywordPartialFallback = (query, knowledge) => {
   const stemmer = natural.PorterStemmerEs;
   const queryStems = cleanAndStem(query, stemmer);
@@ -102,6 +106,71 @@ const keywordPartialFallback = (query, knowledge) => {
   return null;
 };
 
+// --- Singleton para el Pipeline de infobot ---
+// Esta clase se encargará de cargar el modelo y los datos una sola vez.
+class ChatPipeline {
+  static instance = null;
+  static loadingPromise = null;
+
+  constructor(embedder, knowledge, vectors) {
+    this.embedder = embedder;
+    this.knowledge = knowledge;
+    this.vectors = vectors;
+  }
+
+  static async getInstance() {
+    if (this.instance) {
+      return this.instance;
+    }
+
+    if (this.loadingPromise) {
+      return this.loadingPromise;
+    }
+
+    this.loadingPromise = (async () => {
+      try {
+        const [embedder, knowledgeData, vectorsData] = await Promise.all([
+          pipeline('feature-extraction', MODEL_NAME),
+          fs.readFile(KNOWLEDGE_PATH, 'utf-8'),
+          fs.readFile(VECTORS_PATH, 'utf-8'),
+        ]);
+
+        const knowledge = JSON.parse(knowledgeData);
+        const vectors = JSON.parse(vectorsData);
+
+        this.instance = new ChatPipeline(embedder, knowledge, vectors);
+        return this.instance;
+      } catch (error) {
+        console.error('Error al inicializar el pipeline del chat:', error);
+        this.loadingPromise = null; // Permitir reintentos
+        throw error;
+      }
+    })();
+
+    return this.loadingPromise;
+  }
+
+  async search(query) {
+    const output = await this.embedder(query, { pooling: 'mean', normalize: true });
+    const questionVector = [...output.data];
+
+    let bestMatch = { score: -Infinity, id: null };
+    for (const { id, vector } of this.vectors) {
+      const score = cosineSimilarity(questionVector, vector);
+      if (score > bestMatch.score) {
+        bestMatch = { score, id };
+      }
+    }
+
+    if (bestMatch.score < SIMILARITY_THRESHOLD) {
+      const fallbackItem = keywordPartialFallback(query, this.knowledge);
+      return fallbackItem ? fallbackItem.content : FALLBACK_ANSWER;
+    }
+
+    return this.knowledge.find(({ id }) => id === bestMatch.id)?.content ?? FALLBACK_ANSWER;
+  }
+}
+
 export const POST = async (req) => {
   const clientIp = getClientIp(req);
 
@@ -119,36 +188,10 @@ export const POST = async (req) => {
       return NextResponse.json({ error: 'La consulta (query) es requerida.' }, { status: 400 });
     }
 
-    const [vectorsData, knowledgeData] = await Promise.all([
-      fs.readFile(VECTORS_PATH, 'utf-8'),
-      fs.readFile(KNOWLEDGE_PATH, 'utf-8'),
-    ]);
-    const vectors = JSON.parse(vectorsData);
-    const knowledge = JSON.parse(knowledgeData);
+    // Obtenemos la instancia del pipeline (se cargará solo la primera vez)
+    const chatInstance = await ChatPipeline.getInstance();
+    const answer = await chatInstance.search(query);
 
-    const embedder = await pipeline('feature-extraction', MODEL_NAME);
-    const output = await embedder(query, { pooling: 'mean', normalize: true });
-    const questionVector = [...output.data];
-
-    let bestMatch = { score: -Infinity, id: null };
-    for (const { id, vector } of vectors) {
-      const score = cosineSimilarity(questionVector, vector);
-      if (score > bestMatch.score) {
-        bestMatch = { score, id };
-      }
-    }
-
-    if (bestMatch.score < SIMILARITY_THRESHOLD) {
-      const fallbackItem = keywordPartialFallback(query, knowledge);
-      if (fallbackItem) {
-        return NextResponse.json({ answer: fallbackItem.content });
-      }
-      return NextResponse.json({
-        answer: 'Lo siento, su pregunta no se encuentra en nuestra base de conocimientos.',
-      });
-    }
-
-    const answer = knowledge.find(({ id }) => id === bestMatch.id)?.content;
     return NextResponse.json({ answer });
   } catch (error) {
     console.error('Error interno del chatbot:', error);

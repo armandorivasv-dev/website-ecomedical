@@ -26,8 +26,8 @@ export const InfoBotWidget = () => {
             bottom: '140px',
             right: { xs: '5%', md: '2%' },
             width: { xs: '90%', md: '470px' },
-            height: { xs: '70vh', md: '80vh' },
-            maxHeight: '800px',
+            height: { xs: '75vh', md: '80vh' },
+            //maxHeight: '800px',
             display: 'flex',
             flexDirection: 'column',
             borderRadius: '16px',
@@ -35,7 +35,7 @@ export const InfoBotWidget = () => {
             zIndex: 1300,
           }}
         >
-          <InfoBotWidgetContainer />
+          <InfoBotWidgetContainer onClose={toggleChat} />
         </Paper>
       </Fade>
 

@@ -1,7 +1,17 @@
+import { useEffect, useRef } from 'react';
 import { Box, CircularProgress, Typography, useMediaQuery } from '@mui/material';
 
 export const InfoBotWidgetThread = ({ messages, isLoading }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   return (
     <Box
@@ -10,7 +20,7 @@ export const InfoBotWidgetThread = ({ messages, isLoading }) => {
         flex: '1 1 auto', // Clave: Permite que este Box crezca y ocupe el espacio
         overflowY: 'auto', // Clave: Habilita el scroll vertical cuando el contenido excede el tamaño
         p: 2,
-        backgroundColor: 'grey.200',
+        backgroundColor: 'grey.100',
       }}
     >
       {/* El contenido de los mensajes no cambia */}
@@ -49,6 +59,7 @@ export const InfoBotWidgetThread = ({ messages, isLoading }) => {
           <CircularProgress size={20} />
         </Box>
       )}
+      <div ref={messagesEndRef} />
     </Box>
   );
 };

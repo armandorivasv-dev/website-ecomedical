@@ -114,7 +114,7 @@ export const Hero = () => {
               href='https://wa.me/56977013227'
               target='_blank'
             >
-              CALLCENTER
+              AGENDA UNA CITA
             </Button>
             <Button
               variant='outlined'
