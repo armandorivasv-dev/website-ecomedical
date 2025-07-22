@@ -4,9 +4,9 @@ import { Box, Fab, Fade, Paper, Typography, useMediaQuery } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
-import { InfoBotWidgetContainer } from '@/components/InfoBot/InfoBotWidgetContainer';
+import { InfobotWidgetContainer } from '@/components/Infobot/InfobotWidgetContainer';
 
-export const InfoBotWidget = () => {
+export const InfobotWidget = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
 
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,7 @@ export const InfoBotWidget = () => {
             zIndex: 1300,
           }}
         >
-          <InfoBotWidgetContainer onClose={toggleChat} />
+          <InfobotWidgetContainer onClose={toggleChat} />
         </Paper>
       </Fade>
 

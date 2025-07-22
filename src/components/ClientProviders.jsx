@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { Footer } from '@/components/UI/Footer';
 import { TopNav } from '@/components/UI/TopNav';
-import { InfoBotWidget } from '@/components/InfoBot/InfoBotWidget';
+import { InfobotWidget } from '@/components/Infobot/InfobotWidget';
 import { WhatsappWidget } from '@/components/WhatsappWidget';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -15,7 +15,7 @@ const ClientProviders = ({ children }) => {
     <ThemeProvider theme={theme}>
       <TopNav />
       <main>{children}</main>
-      <InfoBotWidget />
+      <InfobotWidget />
       <WhatsappWidget />
       <Footer />
     </ThemeProvider>

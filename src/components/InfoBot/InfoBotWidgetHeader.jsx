@@ -2,9 +2,9 @@ import { Avatar, Box, IconButton, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
-export const InfoBotWidgetHeader = ({ onClose }) => {
+export const InfobotWidgetHeader = ({ onClose }) => {
   return (
-    <Box sx={{ p: 2, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}>
+    <Box sx={{ p: 1, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
         <IconButton
           onClick={onClose}
@@ -13,7 +13,7 @@ export const InfoBotWidgetHeader = ({ onClose }) => {
           <CloseIcon />
         </IconButton>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ px: 1, display: 'flex', alignItems: 'center' }}>
         <Avatar sx={{ bgcolor: 'primary.main', mr: 2 }}>
           <AutoAwesomeIcon />
         </Avatar>

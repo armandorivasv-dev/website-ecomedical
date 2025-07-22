@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import { useChatMessages } from '@/hooks/useChatMessages';
-import { InfoBotWidgetThread } from './InfoBotWidgetThread';
-import { InfoBotWidgetComposer } from './InfoBotWidgetComposer';
-import { InfoBotWidgetHeader } from './InfoBotWidgetHeader';
+import { InfobotWidgetThread } from './InfobotWidgetThread';
+import { InfobotWidgetComposer } from './InfobotWidgetComposer';
+import { InfobotWidgetHeader } from './InfobotWidgetHeader';
 
-export const InfoBotWidgetContainer = ({ onClose }) => {
+export const InfobotWidgetContainer = ({ onClose }) => {
   const { messages, addUserMessage, addInfobotMessage } = useChatMessages();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -31,12 +31,12 @@ export const InfoBotWidgetContainer = ({ onClose }) => {
 
   return (
     <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <InfoBotWidgetHeader onClose={onClose} />
-      <InfoBotWidgetThread
+      <InfobotWidgetHeader onClose={onClose} />
+      <InfobotWidgetThread
         messages={messages}
         isLoading={isLoading}
       />
-      <InfoBotWidgetComposer
+      <InfobotWidgetComposer
         onSend={handleSend}
         isLoading={isLoading}
       />

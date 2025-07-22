@@ -3,7 +3,7 @@ import { Box, Button, CircularProgress, TextField, Typography, useMediaQuery, St
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const InfoBotWidgetComposer = ({ onSend, isLoading }) => {
+export const InfobotWidgetComposer = ({ onSend, isLoading }) => {
   const [message, setMessage] = useState('');
 
   const handleChange = (event) => {
@@ -32,7 +32,7 @@ export const InfoBotWidgetComposer = ({ onSend, isLoading }) => {
 
   return (
     <Box sx={{ backgroundColor: 'grey.100', borderTop: '1px solid', borderColor: 'grey.300' }}>
-      <Box sx={{ display: 'flex', gap: 1, p: 2 }}>
+      <Box sx={{ display: 'flex', gap: 1, px: 2, py: 1 }}>
         <TextField
           fullWidth
           value={message}
@@ -72,13 +72,13 @@ export const InfoBotWidgetComposer = ({ onSend, isLoading }) => {
         alignItems='center'
         justifyContent='center'
         spacing={1}
-        sx={{ paddingBottom: { xs: 1, md: 2 } }}
+        sx={{ paddingBottom: { xs: 1, md: 1 } }}
       >
         <Image
           src='/assets/logos/armandorivasv-dev-isotipo-xxs.png'
           alt='armandorivasv-dev-isotipo'
-          width={25}
-          height={25}
+          width={20}
+          height={20}
         />
         <Typography
           textAlign='center'
