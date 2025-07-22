@@ -16,11 +16,11 @@ export const useChatMessages = () => {
     setMessages((prev) => [...prev, { id: crypto.randomUUID(), role: 'user', content }]);
   };
 
-  const addInfobotMessage = (content) => {
+  const addBotMessage = (content) => {
     setMessages((prev) => [...prev, { id: crypto.randomUUID(), role: 'infobot', content }]);
   };
 
   const clearMessages = () => setMessages(INITIAL_MESSAGES);
 
-  return { messages, addUserMessage, addInfobotMessage, clearMessages };
+  return { messages, addUserMessage, addBotMessage, clearMessages };
 };

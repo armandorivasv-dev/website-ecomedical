@@ -1,8 +1,9 @@
-import { Avatar, Box, IconButton, Typography } from '@mui/material';
+import { Avatar, Box, IconButton, Typography, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export const InfobotWidgetHeader = ({ onClose }) => {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
   return (
     <Box sx={{ p: 1, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
@@ -19,13 +20,13 @@ export const InfobotWidgetHeader = ({ onClose }) => {
         </Avatar>
         <Box>
           <Typography
-            variant='subtitle1'
+            variant={isMobile ? 'subtitle2' : 'subtitle1'}
             fontWeight='bold'
           >
             Asistente de Consultas
           </Typography>
           <Typography
-            variant='body2'
+            variant={isMobile ? 'caption' : 'body2'}
             color='text.secondary'
           >
             Normalmente responde instantáneamente

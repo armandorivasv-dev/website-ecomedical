@@ -106,7 +106,7 @@ const keywordPartialFallback = (query, knowledge) => {
   return null;
 };
 
-// --- Singleton para el Pipeline de infobot ---
+// --- Singleton para el Pipeline de Infobot ---
 // Esta clase se encargará de cargar el modelo y los datos una sola vez.
 class ChatPipeline {
   static instance = null;

@@ -6,7 +6,7 @@ import { InfobotWidgetComposer } from './InfobotWidgetComposer';
 import { InfobotWidgetHeader } from './InfobotWidgetHeader';
 
 export const InfobotWidgetContainer = ({ onClose }) => {
-  const { messages, addUserMessage, addInfobotMessage } = useChatMessages();
+  const { messages, addUserMessage, addBotMessage } = useChatMessages();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSend = async (userMessage) => {
@@ -20,10 +20,10 @@ export const InfobotWidgetContainer = ({ onClose }) => {
       });
       if (!response.ok) throw new Error('Error en la respuesta del servidor');
       const data = await response.json();
-      addInfobotMessage(data.answer);
+      addBotMessage(data.answer);
     } catch (error) {
       console.error('Error al contactar la API:', error);
-      addInfobotMessage('Lo siento, ocurrió un error.');
+      addBotMessage('Lo siento, ocurrió un error.');
     } finally {
       setIsLoading(false);
     }
