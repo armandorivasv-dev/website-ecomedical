@@ -25,7 +25,7 @@ const cardData = [
   },
   {
     id: '04.',
-    title: 'Ecocardiograma',
+    title: 'Ecocardiograma Transtorácico',
     description: 'Análisis del corazón por ultrasonido, evaluando su estructura y función en la comodidad del hogar.',
   },
   {
@@ -35,19 +35,18 @@ const cardData = [
   },
   {
     id: '06.',
-    title: 'Holters cardiacos',
-    description:
-      'Monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio.',
+    title: 'Holters Cardíacos',
+    description: 'Monitoreo del ritmo cardíaco durante 24 horas o más, identificando irregularidades a domicilio.',
   },
   {
     id: '07.',
-    title: 'Holters de presión',
+    title: 'Holters de Presión',
     description:
       'Registro continuo de la presión arterial por 24 horas, útil para diagnósticos de hipertensión en casa.',
   },
   {
     id: '08.',
-    title: 'Rayos x',
+    title: 'Rayos X',
     description:
       'Radiología digital de alta resolución de tórax ap y lateral, así como de todo del sistema óseo, con entrega de resultado en 24 horas.',
   },

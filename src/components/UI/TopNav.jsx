@@ -206,8 +206,8 @@ export const TopNav = () => {
             >
               <Image
                 src='/assets/logos/ecomedical-logo.png'
-                width={mdUp ? 286 * 0.8 : 286 * 0.6}
-                height={mdUp ? 63 * 0.8 : 63 * 0.6}
+                width={1000 * 0.2}
+                height={245 * 0.2}
                 alt='ecomedical atención medica a domicilio'
                 priority={true}
               />
@@ -296,7 +296,7 @@ export const TopNav = () => {
               >
                 <Box
                   sx={{
-                    minWidth: '60dvw',
+                    minWidth: '60vw',
                     p: 2,
                     backgroundColor: 'background.paper',
                     flexGrow: 1,
@@ -304,8 +304,8 @@ export const TopNav = () => {
                 >
                   <Image
                     src='/assets/logos/ecomedical-logo.png'
-                    width={286 * 0.6}
-                    height={63 * 0.6}
+                    width={1000 * 0.2}
+                    height={245 * 0.2}
                     alt='ecomedical atención medica a domicilio'
                     priority={true}
                   />

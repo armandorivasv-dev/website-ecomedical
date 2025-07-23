@@ -83,7 +83,7 @@ export const Hero = () => {
             textAlign='left'
             maxWidth={600}
           >
-            Servicios Médicos a Domicilio y Telemedicina de Cardiología en la comodidad de su hogar.
+            Servicios Médicos, Ecotomografía, y Telemedicina de Cardiología, en la comodidad de su hogar.
           </Typography>
 
           <Typography
@@ -92,17 +92,17 @@ export const Hero = () => {
             maxWidth={600}
             textAlign='left'
           >
-            Realización de Ecotomografias Generales, Ecotomografía Doppler color y Ecocardiograma, Holters cardiacos y
-            de ritmo, y Electrocardiograma.
+            Realización de Ecotomografias Generales, Ecotomografía Doppler color, Ecocardiograma Transtorácico, Holters
+            Cardiacos y Holters de Presión, Electrocardiograma, Rayos X Digital, Laboratorio y Medicina General.
           </Typography>
-          <Typography
+          {/* <Typography
             variant='subtitle2'
             color='white'
             maxWidth={600}
             textAlign='left'
           >
             Servicio de Rayos X Digital, Laboratorio, y Medicina General.
-          </Typography>
+          </Typography> */}
           <Stack
             direction='row'
             spacing={2}
@@ -110,7 +110,7 @@ export const Hero = () => {
           >
             <Button
               variant='contained'
-              size='large'
+              size={isMobile ? 'medium' : 'large'}
               href='https://wa.me/56977013227'
               target='_blank'
             >
@@ -119,7 +119,7 @@ export const Hero = () => {
             <Button
               variant='outlined'
               sx={{ borderColor: 'white', color: 'white' }}
-              size='large'
+              size={isMobile ? 'medium' : 'large'}
               onClick={handleOpenContactForm}
             >
               ESCRÍBENOS

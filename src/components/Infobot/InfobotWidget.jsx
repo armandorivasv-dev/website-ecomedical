@@ -49,7 +49,7 @@ export const InfobotWidget = () => {
           position: 'fixed',
           bottom: { xs: 66, md: 86 },
           right: 16,
-          zIndex: 1301,
+          //zIndex: 1301,
         }}
       >
         {isOpen ? (

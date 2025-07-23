@@ -129,7 +129,7 @@
 
   {
     "id": "precios-telemedicina-cardiologia",
-    "content": "El precio para Telemedicina en Cardiología es de $55.000, Horario de atención: lunes a viernes de 18:30 a 20:00. Sábado y domingo tendrá un recargo  por día no hábil previo acuerdo con el paciente. Para este tipo de atención, es importante contar con una buena conexión a internet y en algunos casos antecedentes y estudios previos, por favor consulte.",
+    "content": "El precio para Telemedicina en Cardiología es de $55.000, Horario de atención: lunes a jueves de 18:30 a 20:00. Sábado y domingo según disponibilidad y tendrá un recargo por día no hábil previo acuerdo con el paciente. Para este tipo de atención, es importante contar con una buena conexión a internet y en algunos casos antecedentes y estudios previos, por favor consulte.",
     "labels": [
       "precio telemedicina",
       "precio cardiología",
@@ -193,9 +193,16 @@
     ]
   },
   {
-    "id": "ecocardiograma",
-    "content": "El servicio de Ecocardiograma permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio. Consulte también por nuestro servicio de telemedicina cardiograma a domicilio.",
-    "labels": ["ecocardiograma", "ecocardiograma domicilio"]
+    "id": "ecocardiograma-transtorácico",
+    "content": "El servicio de Ecocardiograma Transtorácico permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio. Consulte también por nuestro servicio de telemedicina cardiograma a domicilio.",
+    "labels": [
+      "ecocardiograma",
+      "ecocardiograma domicilio",
+      "ecocardiograma transtorácico",
+      "ecocardiograma a domicilio",
+      "estudio corazón",
+      "ecografía cardíaca"
+    ]
   },
   {
     "id": "electrocardiograma",
