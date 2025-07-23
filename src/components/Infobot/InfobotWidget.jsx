@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Box, Fab, Fade, Paper, Typography, useMediaQuery } from '@mui/material';
+import { Fab, Fade, Paper, Typography, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
