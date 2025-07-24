@@ -1,6 +1,8 @@
 [
   {
     "id": "horarios",
+    "type": "general",
+    "keywords": ["horario", "atención", "disponibilidad"],
     "content": "Los horarios de atención médica son de 8:00AM a 9:00PM, sujetos a disponibilidad. Durante los días de semana, la atención suele estar disponible en ese rango horario. Los fines de semana y festivos la disponibilidad puede ser limitada y se recomienda consultar previamente. En casos excepcionales o de urgencia, es posible coordinar atenciones fuera de horario, sujeto a evaluación y disponibilidad del equipo médico.",
     "labels": [
       "horario atención",
@@ -12,257 +14,9 @@
     ]
   },
   {
-    "id": "precios-ecos",
-    "content": "El precio estándar para exámenes de Ecotomografía (Ecos) a domicilio en el cordón de la Vespucio es de $85.000 con descuento de un 50% a partir del segundo estudio, incluyendo el traslado. Fuera de esa zona, el valor puede variar dependiendo de la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica, por favor consulta indicando tu dirección. El precio incluye la realización del examen y la entrega del informe médico. Sábado y domingo tendrá un recargo  por día no hábil, favor consulte.",
-    "labels": [
-      "precio eco",
-      "precios ecos",
-      "valor eco",
-      "costo eco",
-      "precio ecografía",
-      "precio ecos domicilio",
-      "valor ecos domicilio",
-      "precio ecografía domicilio",
-      "precio ecografía"
-    ]
-  },
-  {
-    "id": "precios-rayos-x",
-    "content": "El precio para Rayos X de una proyección a domicilio en el cordón de la Vespucio es de $85.000, incluyendo el traslado y la entrega digital de resultados en 24 horas. Si se requieren más proyecciones en la misma visita, cada proyección adicional tiene un recargo. Fuera del cordón de la Vespucio, el precio puede variar según la distancia o comuna. Si tienes dudas sobre el costo total para tu caso, consulta indicando la cantidad de proyecciones y tu ubicación. En caso de ser dos rayos por la segunda tendría un descuento de 50% y en una 3er se le hace otro descuento adicional favor consultar. Sábado y domingo tendrá un recargo  por día no hábil, favor consulte.",
-    "labels": [
-      "precio rayos x",
-      "precios rayos x",
-      "precio para rayos x",
-      "costo rayos x",
-      "valor rayos x",
-      "precio rayos x domicilio",
-      "valor rayos x domicilio"
-    ]
-  },
-  {
-    "id": "precios-dopler-color",
-    "content": "El precio para Doppler color a domicilio en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo. En caso de que el estudio sea arterial y venoso se aplica un descuento y quedarian ambos  en 160 mil pesos. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
-    "labels": [
-      "precio doppler",
-      "precios doppler",
-      "precio doppler color",
-      "costo doppler",
-      "valor doppler",
-      "precios doppler domicilio",
-      "valor doppler domicilio"
-    ]
-  },
-
-  {
-    "id": "precios-ecocardiograma",
-    "content": "El precio para Ecocardiograma a domicilio en el cordón de la Vespucio es de $170.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Ecocardiograma requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
-    "labels": [
-      "precio ecocardiograma",
-      "precios ecocardiograma",
-      "costo ecocardiograma",
-      "valor ecocardiograma",
-      "precio ecocardiograma a domicilio",
-      "precios ecocardiograma a domicilio",
-      "valor ecocardiograma a domicilio"
-    ]
-  },
-  {
-    "id": "precios-electrocardiograma",
-    "content": "El precio para Electrocardiograma (ECG) a domicilio en el cordón de la Vespucio es de $50.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Electrocardiograma requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
-    "labels": [
-      "precio electrocardiograma",
-      "precios electrocardiograma",
-      "costo electrocardiograma",
-      "valor electrocardiograma",
-      "precio electrocardiograma domicilio",
-      "precio electrocardiograma a domicilio",
-      "precios electrocardiograma domicilio",
-      "valor electrocardiograma domicilio",
-      "valor electrocardiograma a domicilio"
-    ]
-  },
-
-  {
-    "id": "precios-holter-cardiaco",
-    "content": "El precio para Holter cardíaco a domicilio en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
-    "labels": [
-      "precio holter cardíaco",
-      "precios holter cardíaco",
-      "costo holter cardíaco",
-      "valor holter cardíaco",
-      "precio holter cardíaco domicilio",
-      "precio holter cardíaco a domicilio",
-      "precios holter cardíaco domicilio",
-      "valor holter cardíaco domicilio"
-    ]
-  },
-
-  {
-    "id": "precios-holter-presion",
-    "content": "El precio para Holter de presión a domicilio en el cordón de la Vespucio es de $95.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Holter requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
-    "labels": [
-      "precio holter presión",
-      "precios holter presión",
-      "costo holter presión",
-      "valor holter presión",
-      "precio holter presión domicilio",
-      "precio holter presión a domicilio",
-      "precios holter presión domicilio",
-      "valor holter presión domicilio"
-    ]
-  },
-
-  {
-    "id": "precios-medicina-general",
-    "content": "El precio para Medicina General a domicilio en el cordón de la Vespucio es de $50.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
-    "labels": [
-      "precio medicina general",
-      "precios medicina general",
-      "costo medicina general",
-      "valor medicina general",
-      "precio medicina general domicilio",
-      "precio medicina general a domicilio",
-      "precios medicina general domicilio",
-      "valor medicina general domicilio"
-    ]
-  },
-
-  {
-    "id": "precios-telemedicina-cardiologia",
-    "content": "El precio para Telemedicina en Cardiología es de $55.000, Horario de atención: lunes a jueves de 18:30 a 20:00. Sábado y domingo según disponibilidad y tendrá un recargo por día no hábil previo acuerdo con el paciente. Para este tipo de atención, es importante contar con una buena conexión a internet y en algunos casos antecedentes y estudios previos, por favor consulte.",
-    "labels": [
-      "precio telemedicina",
-      "precio cardiología",
-      "precio telemedicina cardiología",
-      "precios telemedicina cardiología",
-      "costo telemedicina cardiología",
-      "valor telemedicina cardiología",
-      "precio telemedicina cardiología domicilio",
-      "precio telemedicina cardiología a domicilio",
-      "precios telemedicina cardiología domicilio",
-      "valor telemedicina cardiología domicilio"
-    ]
-  },
-
-  {
-    "id": "medios-de-pago",
-    "content": "Aceptamos una amplia variedad de medios de pago para tu comodidad: tarjetas de crédito (Visa, MasterCard, American Express), tarjetas de débito de cualquier banco y transferencias electrónicas. Si necesitas factura o boleta, indícalo al momento de agendar. En casos excepcionales, se puede coordinar pago en efectivo, sujeto a confirmación previa.",
-    "labels": [
-      "medios de pago",
-      "formas de pago",
-      "cómo pagar",
-      "pago con tarjeta",
-      "pago transferencia",
-      "pago efectivo"
-    ]
-  },
-
-  {
-    "id": "ecotomografia-general",
-    "content": "Ofrecemos el servicio de Ecotomografía general a domicilio, ideal para quienes requieren estudios sin desplazarse a un centro médico. Realizamos estudios abdominales, tiroideos, pelvianos (femenino y masculino), renales, de cuello, inguinales, testiculares, pared abdominal y partes blandas. El examen se realiza con equipos portátiles de alta resolución y el informe se entrega en formato digital. Si tienes dudas sobre la preparación o el tipo de ecografía que necesitas, consulta con nuestro equipo antes de agendar.",
-    "labels": [
-      "ecotomografía general",
-      "eco general",
-      "ecografía general",
-      "estudios ecográficos",
-      "eco domicilio",
-      "ecografía a domicilio"
-    ]
-  },
-  {
-    "id": "ecotomografia-musculo-esqueletica",
-    "content": "Nuestro servicio de Ecotomografía músculo esquelética evalúa articulaciones y tejidos blandos como muñeca, mano, tobillo, pie, codo, rodilla, hombro, caderas, muslo, pierna, brazo y antebrazo, todo en la comodidad de tu hogar. Es útil para diagnosticar lesiones deportivas, inflamaciones, desgarros y otras patologías musculares o articulares. Si tienes dolor, inflamación o sospecha de lesión, este examen puede ayudarte a obtener un diagnóstico preciso sin salir de casa.",
-    "labels": [
-      "ecotomografía músculo esquelética",
-      "eco músculo esquelético",
-      "ecografía muscular",
-      "eco articulaciones",
-      "eco lesiones deportivas"
-    ]
-  },
-  {
-    "id": "ecotomografia-doppler-color",
-    "content": "Realizamos Ecotomografía Doppler color a domicilio, incluyendo estudios arteriales y venosos de miembros inferiores y superiores, Doppler carotídeo y vertebral, Doppler testicular, descarte de trombosis venosa profunda (TVP) y Doppler de partes blandas. El Doppler permite evaluar el flujo sanguíneo y detectar obstrucciones o alteraciones vasculares. Si tienes antecedentes de trombosis, várices, dolor o hinchazón, consulta por este examen.",
-    "labels": [
-      "ecotomografía doppler",
-      "doppler color",
-      "doppler arterial",
-      "doppler venoso",
-      "doppler domicilio",
-      "eco doppler"
-    ]
-  },
-  {
-    "id": "ecocardiograma-transtorácico",
-    "content": "El servicio de Ecocardiograma Transtorácico permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio. Consulte también por nuestro servicio de telemedicina cardiograma a domicilio.",
-    "labels": [
-      "ecocardiograma",
-      "ecocardiograma domicilio",
-      "ecocardiograma transtorácico",
-      "ecocardiograma a domicilio",
-      "estudio corazón",
-      "ecografía cardíaca"
-    ]
-  },
-  {
-    "id": "electrocardiograma",
-    "content": "Ofrecemos Electrocardiograma (ECG) a domicilio, registrando la actividad eléctrica del corazón para detectar arritmias, infartos y otros problemas cardíacos. El procedimiento es rápido, no invasivo y los resultados se entregan en formato digital. Si tienes palpitaciones, dolor en el pecho o antecedentes cardíacos, este examen puede ser indicado para ti.",
-    "labels": ["electrocardiograma", "ecg", "examen corazón", "electrocardiograma domicilio", "test cardíaco"]
-  },
-  {
-    "id": "holter-cardiaco",
-    "content": "El Holter cardíaco permite el monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades que no siempre se detectan en un ECG convencional. Es ideal para pacientes con palpitaciones, desmayos o sospecha de arritmias intermitentes. El equipo se instala en tu domicilio y se retira al día siguiente para analizar los resultados.",
-    "labels": ["holter cardíaco", "monitoreo cardíaco", "holter 24 horas", "estudio ritmo cardíaco", "holter domicilio"]
-  },
-  {
-    "id": "holter-presion",
-    "content": "El Holter de presión registra la presión arterial de manera continua por 24 horas, útil para diagnósticos de hipertensión y control de tratamientos. El equipo se instala en tu domicilio y se retira al día siguiente. Es recomendable para pacientes con presión arterial variable o sospecha de hipertensión de bata blanca.",
-    "labels": [
-      "holter presión",
-      "monitoreo presión arterial",
-      "holter de presión arterial",
-      "estudio presión",
-      "presión 24 horas"
-    ]
-  },
-  {
-    "id": "rayos-x",
-    "content": "Contamos con servicio de Rayos X digital de alta resolución para tórax (AP y lateral) y sistema óseo completo, con entrega de resultados en 24 horas. El examen se realiza en tu domicilio con equipos portátiles certificados. Es útil para diagnosticar fracturas, infecciones pulmonares, artrosis y otras patologías. Si necesitas varias proyecciones, consulta por los recargos aplicables.",
-    "labels": [
-      "rayos x",
-      "radiografía",
-      "radiografías domicilio",
-      "rayos x domicilio",
-      "radiografía tórax",
-      "radiografía huesos"
-    ]
-  },
-  {
-    "id": "laboratorio",
-    "content": "Ofrecemos toma de muestras de sangre, orina y cultivos en tu domicilio, con entrega de resultados durante el día en la mayoría de los exámenes. El servicio es ideal para pacientes con movilidad reducida, adultos mayores o quienes prefieren evitar salas de espera. Si el examen requiere ayuno o preparación especial, te lo informaremos al agendar.",
-    "labels": [
-      "laboratorio",
-      "exámenes de sangre",
-      "toma de muestras",
-      "análisis clínicos",
-      "laboratorio domicilio",
-      "exámenes orina"
-    ]
-  },
-  {
-    "id": "medicina-general",
-    "content": "Brindamos atención médica integral para adultos y niños, abordando diversas patologías y consultas en el hogar. Atendemos enfermedades agudas (resfríos, infecciones, dolores) y crónicas (diabetes, hipertensión), realizamos controles preventivos y seguimiento de tratamientos. Si tienes síntomas, dudas de salud o necesitas receta médica, puedes agendar una consulta a domicilio.",
-    "labels": [
-      "medicina general",
-      "consulta médica",
-      "médico domicilio",
-      "atención médica",
-      "consulta adultos",
-      "consulta niños"
-    ]
-  },
-  {
     "id": "cobertura",
+    "type": "general",
+    "keywords": ["cobertura", "zonas", "comunas", "regiones"],
     "content": "Nuestra cobertura de atención médica integral abarca la Región Metropolitana y la 5ta Región. En la Región Metropolitana la cobertura es completa, mientras que en la 5ta Región es parcial y sujeta a disponibilidad. Para comunas rurales o alejadas, consulta previamente para confirmar la factibilidad y posibles recargos por traslado.",
     "labels": [
       "cobertura",
@@ -275,21 +29,29 @@
   },
   {
     "id": "contacto-correo",
+    "type": "general",
+    "keywords": ["contacto", "correo", "email"],
     "content": "Puedes contactarnos escribiendo a nuestro correo: ecomedical.cl@gmail.com. Respondemos habitualmente en menos de 24 horas hábiles. Si necesitas enviar exámenes previos o fotos para evaluación, puedes adjuntarlos en tu correo.",
     "labels": ["contacto", "correo electrónico", "email", "contacto médico", "enviar exámenes", "contacto ecomedical"]
   },
   {
     "id": "pasos-atencion",
+    "type": "general",
+    "keywords": ["pasos", "proceso", "como funciona", "agendar"],
     "content": "¿Cómo trabajamos? 1. Agenda tu consulta médica a domicilio a través de nuestro sitio web, correo o teléfono. 2. Consulta con nuestros médicos en la fecha y hora acordada. 3. Recibe una evaluación médica completa y personalizada en tu domicilio. 4. Obtén tu diagnóstico detallado y, si corresponde, recetas o indicaciones. Si necesitas reagendar o cancelar, avísanos con anticipación para evitar recargos.",
     "labels": ["pasos atención", "cómo funciona", "proceso atención", "agendar consulta", "pasos consulta médica"]
   },
   {
     "id": "agendar-cita",
+    "type": "general",
+    "keywords": ["agendar", "cita", "reservar", "pedir hora"],
     "content": "Para agendar una cita, presiona el botón 'AGENDA UNA CITA' en nuestro sitio web o contáctanos directamente por correo o teléfono. No es necesario registrarse, pero si lo haces podrás acceder a tu historial de consultas y facilitar futuras agendaciones. Las citas para el mismo día están sujetas a disponibilidad.",
     "labels": ["agendar cita", "reservar hora", "pedir consulta", "agendar médico", "cita médica", "reservar consulta"]
   },
   {
     "id": "doctores-expertos",
+    "type": "general",
+    "keywords": ["doctores", "medicos", "especialistas", "equipo"],
     "content": "Contamos con doctores expertos y profesionales cualificados que ofrecen atención de máxima calidad. Nuestro equipo incluye médicos generales y especialistas en áreas como pediatría, ginecología, cardiología, traumatología y dermatología. Puedes solicitar atención con un especialista según disponibilidad.",
     "labels": [
       "doctores expertos",
@@ -301,6 +63,8 @@
   },
   {
     "id": "atencion-emergencia",
+    "type": "general",
+    "keywords": ["emergencia", "urgencia"],
     "content": "Ofrecemos atención de emergencia con tratamiento rápido y confiable cuando más lo necesitas. Atendemos emergencias médicas a domicilio en la Región Metropolitana y parte de la 5ta Región, sujeto a disponibilidad y coordinación previa. El costo puede ser mayor que una consulta regular debido a la urgencia y recursos movilizados. Si tienes una emergencia grave, te recomendamos contactar también a los servicios de urgencia locales.",
     "labels": [
       "atención emergencia",
@@ -311,7 +75,168 @@
     ]
   },
   {
+    "id": "medios-de-pago",
+    "type": "general",
+    "keywords": ["pago", "pagar", "tarjeta", "transferencia", "efectivo"],
+    "content": "Aceptamos una amplia variedad de medios de pago para tu comodidad: tarjetas de crédito (Visa, MasterCard, American Express), tarjetas de débito de cualquier banco y transferencias electrónicas. Si necesitas factura o boleta, indícalo al momento de agendar. En casos excepcionales, se puede coordinar pago en efectivo, sujeto a confirmación previa.",
+    "labels": [
+      "medios de pago",
+      "formas de pago",
+      "cómo pagar",
+      "pago con tarjeta",
+      "pago transferencia",
+      "pago efectivo"
+    ]
+  },
+  {
+    "id": "ecotomografia-general",
+    "type": "item",
+    "keywords": ["eco", "ecos", "ecotomografía", "ecografia"],
+    "content": "Ofrecemos el servicio de Ecotomografía general a domicilio, ideal para quienes requieren estudios sin desplazarse a un centro médico. Realizamos estudios abdominales, tiroideos, pelvianos (femenino y masculino), renales, de cuello, inguinales, testiculares, pared abdominal y partes blandas. El examen se realiza con equipos portátiles de alta resolución y el informe se entrega en formato digital. Si tienes dudas sobre la preparación o el tipo de ecografía que necesitas, consulta con nuestro equipo antes de agendar.",
+    "labels": [
+      "ecotomografía general",
+      "eco general",
+      "ecografía general",
+      "estudios ecográficos",
+      "eco domicilio",
+      "ecografía a domicilio",
+      "hacen ecos"
+    ]
+  },
+  {
+    "id": "ecotomografia-musculo-esqueletica",
+    "type": "item",
+    "keywords": ["ecotomografía musculo esquelética", "eco muscular", "eco de musculo"],
+    "content": "Nuestro servicio de Ecotomografía músculo esquelética evalúa articulaciones y tejidos blandos como muñeca, mano, tobillo, pie, codo, rodilla, hombro, caderas, muslo, pierna, brazo y antebrazo, todo en la comodidad de tu hogar. Es útil para diagnosticar lesiones deportivas, inflamaciones, desgarros y otras patologías musculares o articulares. Si tienes dolor, inflamación o sospecha de lesión, este examen puede ayudarte a obtener un diagnóstico preciso sin salir de casa.",
+    "labels": [
+      "ecotomografía músculo esquelética",
+      "eco músculo esquelético",
+      "ecografía muscular",
+      "eco articulaciones",
+      "eco lesiones deportivas"
+    ]
+  },
+  {
+    "id": "ecotomografia-doppler-color",
+    "type": "item",
+    "keywords": ["doppler", "doppler color", "ecotomografia doppler"],
+    "content": "Realizamos Ecotomografía Doppler color a domicilio, incluyendo estudios arteriales y venosos de miembros inferiores y superiores, Doppler carotídeo y vertebral, Doppler testicular, descarte de trombosis venosa profunda (TVP) y Doppler de partes blandas. El Doppler permite evaluar el flujo sanguíneo y detectar obstrucciones o alteraciones vasculares. Si tienes antecedentes de trombosis, várices, dolor o hinchazón, consulta por este examen.",
+    "labels": [
+      "ecotomografía doppler",
+      "doppler color",
+      "doppler arterial",
+      "doppler venoso",
+      "doppler domicilio",
+      "eco doppler",
+      "hacen doppler"
+    ]
+  },
+  {
+    "id": "ecocardiograma-transtorácico",
+    "type": "item",
+    "keywords": ["ecocardiograma", "ecocardiograma transtoracico"],
+    "content": "El servicio de Ecocardiograma Transtorácico permite analizar la estructura y función del corazón mediante ultrasonido, directamente en tu domicilio. Es útil para evaluar insuficiencia cardíaca, soplos, enfermedades valvulares y otras patologías cardíacas. El examen es realizado por profesionales especializados y el informe se entrega en formato digital. Si tienes síntomas como falta de aire, dolor torácico o antecedentes cardíacos, consulta por este servicio. Consulte también por nuestro servicio de telemedicina cardiograma a domicilio.",
+    "labels": [
+      "ecocardiograma",
+      "ecocardiograma domicilio",
+      "ecocardiograma transtorácico",
+      "ecocardiograma a domicilio",
+      "estudio corazón",
+      "ecografía cardíaca",
+      "hacen ecocardiograma"
+    ]
+  },
+  {
+    "id": "electrocardiograma",
+    "type": "item",
+    "keywords": ["electrocardiograma", "ecg", "electro"],
+    "content": "Ofrecemos Electrocardiograma (ECG) a domicilio, registrando la actividad eléctrica del corazón para detectar arritmias, infartos y otros problemas cardíacos. El procedimiento es rápido, no invasivo y los resultados se entregan en formato digital. Si tienes palpitaciones, dolor en el pecho o antecedentes cardíacos, este examen puede ser indicado para ti.",
+    "labels": [
+      "electrocardiograma",
+      "ecg",
+      "examen corazón",
+      "electrocardiograma domicilio",
+      "test cardíaco",
+      "hacen electrocardiograma"
+    ]
+  },
+  {
+    "id": "holter-cardiaco",
+    "type": "item",
+    "keywords": ["holter cardiaco", "holter de corazon"],
+    "content": "El Holter cardíaco permite el monitoreo prolongado del ritmo cardíaco durante 24 horas o más, identificando irregularidades que no siempre se detectan en un ECG convencional. Es ideal para pacientes con palpitaciones, desmayos o sospecha de arritmias intermitentes. El equipo se instala en tu domicilio y se retira al día siguiente para analizar los resultados.",
+    "labels": [
+      "holter cardíaco",
+      "monitoreo cardíaco",
+      "holter 24 horas",
+      "estudio ritmo cardíaco",
+      "holter domicilio",
+      "hacen holter cardiaco"
+    ]
+  },
+  {
+    "id": "holter-presion",
+    "type": "item",
+    "keywords": ["holter de presion", "holter presion"],
+    "content": "El Holter de presión registra la presión arterial de manera continua por 24 horas, útil para diagnósticos de hipertensión y control de tratamientos. El equipo se instala en tu domicilio y se retira al día siguiente. Es recomendable para pacientes con presión arterial variable o sospecha de hipertensión de bata blanca.",
+    "labels": [
+      "holter presión",
+      "monitoreo presión arterial",
+      "holter de presión arterial",
+      "estudio presión",
+      "presión 24 horas",
+      "hacen holter de presion"
+    ]
+  },
+  {
+    "id": "rayos-x",
+    "type": "item",
+    "keywords": ["rayos x", "radiografía", "radiografias"],
+    "content": "Contamos con servicio de Rayos X digital de alta resolución para tórax (AP y lateral) y sistema óseo completo, con entrega de resultados en 24 horas. El examen se realiza en tu domicilio con equipos portátiles certificados. Es útil para diagnosticar fracturas, infecciones pulmonares, artrosis y otras patologías. Si necesitas varias proyecciones, consulta por los recargos aplicables.",
+    "labels": [
+      "rayos x",
+      "radiografía",
+      "radiografías domicilio",
+      "rayos x domicilio",
+      "radiografía tórax",
+      "radiografía huesos",
+      "hacen rayos x"
+    ]
+  },
+  {
+    "id": "laboratorio",
+    "type": "item",
+    "keywords": ["laboratorio", "examenes de sangre", "toma de muestras"],
+    "content": "Ofrecemos toma de muestras de sangre, orina y cultivos en tu domicilio, con entrega de resultados durante el día en la mayoría de los exámenes. El servicio es ideal para pacientes con movilidad reducida, adultos mayores o quienes prefieren evitar salas de espera. Si el examen requiere ayuno o preparación especial, te lo informaremos al agendar.",
+    "labels": [
+      "laboratorio",
+      "exámenes de sangre",
+      "toma de muestras",
+      "análisis clínicos",
+      "laboratorio domicilio",
+      "exámenes orina"
+    ]
+  },
+  {
+    "id": "medicina-general",
+    "type": "item",
+    "keywords": ["medicina general", "consulta medica", "medico general", "consulta de medicina general"],
+    "content": "Sí, ofrecemos el servicio de Medicina General a domicilio. Brindamos atención médica integral para adultos y niños, abordando diversas patologías y consultas en el hogar. Atendemos enfermedades agudas (resfríos, infecciones, dolores) y crónicas (diabetes, hipertensión), realizamos controles preventivos y seguimiento de tratamientos. Si tienes síntomas, dudas de salud o necesitas receta médica, puedes agendar una consulta a domicilio.",
+    "labels": [
+      "medicina general",
+      "consulta médica",
+      "médico domicilio",
+      "atención médica",
+      "consulta adultos",
+      "consulta niños",
+      "tienen medicina general",
+      "ofrecen consulta de medicina general"
+    ]
+  },
+  {
     "id": "telemedicina-cardiologia",
+    "type": "item",
+    "keywords": ["telemedicina cardiologia", "teleconsulta cardiologia", "cardiologia virtual"],
     "content": "Ofrecemos consultas de telemedicina en cardiología, permitiendo a los pacientes recibir atención especializada sin necesidad de desplazarse. Puedes agendar una cita virtual con nuestros cardiólogos para evaluar síntomas, revisar exámenes previos y recibir recomendaciones personalizadas. Las consultas se realizan a través de videollamada segura y son ideales para seguimiento de enfermedades cardíacas o evaluación de nuevos síntomas. Para este tipo de atención, es importante contar con una buena conexión a internet y el algunos casos antecedentes y estudios previos favor consulte.",
     "labels": [
       "telemedicina cardiología",
@@ -320,7 +245,130 @@
       "cardiología",
       "cardiologia",
       "cardiología domicilio",
-      "cardiología a domicilio"
+      "cardiología a domicilio",
+      "hacen telemedicina"
+    ]
+  },
+  {
+    "id": "precios-ecos",
+    "type": "price",
+    "keywords": ["eco", "ecos", "ecotomografía", "ecografia"],
+    "content": "El precio estándar para exámenes de Ecotomografía (Ecos) a domicilio en el cordón de la Vespucio es de $85.000 con descuento de un 50% a partir del segundo estudio, incluyendo el traslado. Fuera de esa zona, el valor puede variar dependiendo de la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica, por favor consulta indicando tu dirección. El precio incluye la realización del examen y la entrega del informe médico. Sábado y domingo tendrá un recargo  por día no hábil, favor consulte.",
+    "labels": [
+      "precio eco",
+      "precios ecos",
+      "valor eco",
+      "costo eco",
+      "cuanto vale un eco",
+      "precio ecografía",
+      "valor ecotomografía",
+      "costos ecos"
+    ]
+  },
+  {
+    "id": "precios-rayos-x",
+    "type": "price",
+    "keywords": ["rayos x", "rayo x", "radiografía", "radiografias"],
+    "content": "El precio para Rayos X de una proyección a domicilio en el cordón de la Vespucio es de $85.000, incluyendo el traslado y la entrega digital de resultados en 24 horas. Si se requieren más proyecciones en la misma visita, cada proyección adicional tiene un recargo. Fuera del cordón de la Vespucio, el precio puede variar según la distancia o comuna. Si tienes dudas sobre el costo total para tu caso, consulta indicando la cantidad de proyecciones y tu ubicación. En caso de ser dos rayos por la segunda tendría un descuento de 50% y en una 3er se le hace otro descuento adicional favor consultar. Sábado y domingo tendrá un recargo  por día no hábil, favor consulte.",
+    "labels": [
+      "precio rayos x",
+      "precios rayos x",
+      "costo rayos x",
+      "valor rayos x",
+      "cuanto vale una radiografía",
+      "precio radiografía"
+    ]
+  },
+  {
+    "id": "precios-doppler-color",
+    "type": "price",
+    "keywords": ["doppler", "doppler color"],
+    "content": "El precio para Doppler color a domicilio en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo. En caso de que el estudio sea arterial y venoso se aplica un descuento y quedarian ambos  en 160 mil pesos. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio doppler",
+      "precios doppler",
+      "costo doppler",
+      "valor doppler",
+      "cuanto vale un doppler",
+      "precio doppler color"
+    ]
+  },
+  {
+    "id": "precios-ecocardiograma",
+    "type": "price",
+    "keywords": ["ecocardiograma"],
+    "content": "El precio para Ecocardiograma a domicilio en el cordón de la Vespucio es de $170.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Ecocardiograma requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio ecocardiograma",
+      "precios ecocardiograma",
+      "costo ecocardiograma",
+      "valor ecocardiograma",
+      "cuanto vale un ecocardiograma"
+    ]
+  },
+  {
+    "id": "precios-electrocardiograma",
+    "type": "price",
+    "keywords": ["electrocardiograma", "ecg", "electro"],
+    "content": "El precio para Electrocardiograma (ECG) a domicilio en el cordón de la Vespucio es de $50.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Electrocardiograma requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio electrocardiograma",
+      "precios ecg",
+      "costo electrocardiograma",
+      "valor ecg",
+      "cuanto vale un electro"
+    ]
+  },
+  {
+    "id": "precios-holter-cardiaco",
+    "type": "price",
+    "keywords": ["holter cardiaco", "holter de corazon"],
+    "content": "El precio para Holter cardíaco a domicilio en el cordón de la Vespucio es de $120.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Doppler requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio holter cardíaco",
+      "precios holter cardíaco",
+      "costo holter cardíaco",
+      "valor holter cardíaco",
+      "cuanto vale un holter cardiaco"
+    ]
+  },
+  {
+    "id": "precios-holter-presion",
+    "type": "price",
+    "keywords": ["holter de presion", "holter presion"],
+    "content": "El precio para Holter de presión a domicilio en el cordón de la Vespucio es de $95.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Si necesitas cotización para una zona específica o tienes dudas sobre el tipo de Holter requerido, consulta con nuestro equipo. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio holter presión",
+      "precios holter presión",
+      "costo holter presión",
+      "valor holter presión",
+      "cuanto vale un holter de presion"
+    ]
+  },
+  {
+    "id": "precios-medicina-general",
+    "type": "price",
+    "keywords": ["medicina general", "consulta medica", "medico general"],
+    "content": "El precio para Medicina General a domicilio en el cordón de la Vespucio es de $60.000, incluyendo el traslado y el informe médico. Fuera de esa zona, el valor puede variar según la distancia o comuna y se puede aplicar un recargo por desplazamiento. Sábado y domingo tendrá un recargo  por día no hábil, por favor consulte.",
+    "labels": [
+      "precio medicina general",
+      "precios consulta medica",
+      "costo medico general",
+      "valor consulta medica",
+      "cuanto vale una consulta medica"
+    ]
+  },
+  {
+    "id": "precios-telemedicina-cardiologia",
+    "type": "price",
+    "keywords": ["telemedicina cardiologia", "teleconsulta cardiologia"],
+    "content": "El precio para Telemedicina en Cardiología es de $55.000, Horario de atención: lunes a jueves de 18:30 a 20:00. Sábado y domingo según disponibilidad y tendrá un recargo por día no hábil previo acuerdo con el paciente. Para este tipo de atención, es importante contar con una buena conexión a internet y en algunos casos antecedentes y estudios previos, por favor consulte.",
+    "labels": [
+      "precio telemedicina cardiología",
+      "precios teleconsulta cardiología",
+      "costo telemedicina cardiología",
+      "valor teleconsulta cardiología",
+      "cuanto vale la telemedicina en cardiologia"
     ]
   }
 ]

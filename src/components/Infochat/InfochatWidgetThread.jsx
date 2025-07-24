@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Box, CircularProgress, Typography, useMediaQuery } from '@mui/material';
 
-export const InfobotWidgetThread = ({ messages, isLoading }) => {
+export const InfochatWidgetThread = ({ messages, isLoading }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
   const messagesEndRef = useRef(null);
 

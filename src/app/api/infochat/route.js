@@ -10,6 +10,16 @@ const MODEL_NAME = 'Xenova/all-MiniLM-L6-v2';
 const SIMILARITY_THRESHOLD = 0.5;
 const FALLBACK_ANSWER =
   'Lo siento, su pregunta no se encuentra en nuestra base de conocimientos. Si deseas contactar con un médico especialista que responda tu inquietud, envía un mensaje a nuestro WhatsApp en el botón: AGENDA UNA CITA.';
+const PRICE_INTENT_KEYWORDS = [
+  'precio',
+  'precios',
+  'valor',
+  'valores',
+  'costo',
+  'costos',
+  'cuanto vale',
+  'cuánto cuesta',
+];
 
 // --- Rate Limiting (sin cambios) ---
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minuto
@@ -151,18 +161,46 @@ class ChatPipeline {
   }
 
   async search(query) {
+    const normalizedQuery = normalizeText(query);
+    const isPriceQuery = PRICE_INTENT_KEYWORDS.some((keyword) => normalizedQuery.includes(keyword));
+
     const output = await this.embedder(query, { pooling: 'mean', normalize: true });
     const questionVector = [...output.data];
 
+    let searchTypes = [];
+    if (isPriceQuery) {
+      searchTypes = ['price'];
+    } else {
+      // Priorizar items, luego general.
+      searchTypes = ['item', 'general'];
+    }
+
     let bestMatch = { score: -Infinity, id: null };
-    for (const { id, vector } of this.vectors) {
-      const score = cosineSimilarity(questionVector, vector);
-      if (score > bestMatch.score) {
-        bestMatch = { score, id };
+
+    for (const type of searchTypes) {
+      const relevantKnowledge = this.knowledge.filter((item) => item.type === type);
+      const relevantKnowledgeIds = new Set(relevantKnowledge.map((item) => item.id));
+      const relevantVectors = this.vectors.filter((v) => relevantKnowledgeIds.has(v.id));
+
+      if (relevantVectors.length === 0) {
+        continue;
+      }
+
+      for (const { id, vector } of relevantVectors) {
+        const score = cosineSimilarity(questionVector, vector);
+        if (score > bestMatch.score) {
+          bestMatch = { score, id };
+        }
+      }
+
+      // Si encontramos una coincidencia suficientemente buena en el tipo priorizado (item), la usamos.
+      if (type === 'item' && bestMatch.score >= SIMILARITY_THRESHOLD) {
+        break; // Salir del bucle para no buscar en 'general'
       }
     }
 
     if (bestMatch.score < SIMILARITY_THRESHOLD) {
+      // El fallback busca en TODO el conocimiento, no solo el filtrado
       const fallbackItem = keywordPartialFallback(query, this.knowledge);
       return fallbackItem ? fallbackItem.content : FALLBACK_ANSWER;
     }

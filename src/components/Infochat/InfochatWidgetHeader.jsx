@@ -2,7 +2,7 @@ import { Avatar, Box, IconButton, Typography, useMediaQuery } from '@mui/materia
 import CloseIcon from '@mui/icons-material/Close';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
-export const InfobotWidgetHeader = ({ onClose }) => {
+export const InfochatWidgetHeader = ({ onClose }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
   return (
     <Box sx={{ p: 1, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}>

@@ -3,7 +3,7 @@ import { Box, Button, CircularProgress, TextField, Typography, useMediaQuery, St
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const InfobotWidgetComposer = ({ onSend, isLoading }) => {
+export const InfochatWidgetComposer = ({ onSend, isLoading }) => {
   const [message, setMessage] = useState('');
 
   const handleChange = (event) => {
