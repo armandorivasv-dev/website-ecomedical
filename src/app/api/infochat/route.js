@@ -12,16 +12,34 @@ const FALLBACK_ANSWER =
   'Lo siento, su pregunta no se encuentra en nuestra base de conocimientos. Si deseas contactar con un médico especialista que responda tu inquietud, envía un mensaje a nuestro WhatsApp en el botón: AGENDA UNA CITA.';
 const PRICE_INTENT_KEYWORDS = [
   'precio',
+  'que precio',
+  'cual precio',
+  'cual es el precio',
   'precios',
+  'que precios',
+  'cuales precios',
   'valor',
+  'que valor',
+  'cual valor',
+  'cual es el valor',
   'valores',
+  'que valores',
+  'cuales valores',
   'costo',
+  'que costo',
+  'cual costo',
+  'cual es el costo',
   'costos',
+  'que costos',
+  'cuales costos',
+  'vale',
   'cuanto vale',
+  'cuesta',
+  'cuanto cuesta',
   'cuánto cuesta',
 ];
 
-// --- Rate Limiting (sin cambios) ---
+// --- Rate Limiting  ---
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minuto
 const RATE_LIMIT_MAX_REQUESTS = 10;
 const rateLimitMap = new Map();
@@ -49,7 +67,7 @@ const isRateLimited = (ip) => {
   return false;
 };
 
-// --- Funciones de Utilidad (sin cambios) ---
+// --- Funciones de Utilidad  ---
 const cosineSimilarity = (vectorA, vectorB) => {
   const dotProduct = vectorA.reduce((sum, a, i) => sum + a * vectorB[i], 0);
   const normA = Math.sqrt(vectorA.reduce((sum, a) => sum + a * a, 0));
@@ -164,6 +182,28 @@ class ChatPipeline {
     const normalizedQuery = normalizeText(query);
     const isPriceQuery = PRICE_INTENT_KEYWORDS.some((keyword) => normalizedQuery.includes(keyword));
 
+    // 1. Enfoque Híbrido: Intentar encontrar el tema por keywords
+    let foundItemByKeyword = null;
+    for (const item of this.knowledge) {
+      if (item.keywords?.some((kw) => normalizedQuery.includes(kw))) {
+        // Encontramos un tema. Ahora, ¿coincide con la intención?
+        if (isPriceQuery && item.type === 'price') {
+          foundItemByKeyword = item;
+          break;
+        }
+        if (!isPriceQuery && item.type === 'item') {
+          foundItemByKeyword = item;
+          break;
+        }
+      }
+    }
+
+    // Si la búsqueda por keyword fue exitosa y precisa, devolvemos el resultado directamente.
+    if (foundItemByKeyword) {
+      return foundItemByKeyword.content;
+    }
+
+    // 2. Si el enfoque híbrido falla, recurrimos a la búsqueda semántica completa (lógica anterior mejorada)
     const output = await this.embedder(query, { pooling: 'mean', normalize: true });
     const questionVector = [...output.data];
 
@@ -186,16 +226,23 @@ class ChatPipeline {
         continue;
       }
 
+      let typeBestMatch = { score: -Infinity, id: null };
       for (const { id, vector } of relevantVectors) {
         const score = cosineSimilarity(questionVector, vector);
-        if (score > bestMatch.score) {
-          bestMatch = { score, id };
+        if (score > typeBestMatch.score) {
+          typeBestMatch = { score, id };
         }
       }
 
+      // Actualizamos el mejor match global si el de este tipo es mejor
+      if (typeBestMatch.score > bestMatch.score) {
+        bestMatch = typeBestMatch;
+      }
+
       // Si encontramos una coincidencia suficientemente buena en el tipo priorizado (item), la usamos.
-      if (type === 'item' && bestMatch.score >= SIMILARITY_THRESHOLD) {
-        break; // Salir del bucle para no buscar en 'general'
+      // No rompemos el bucle si la puntuación es baja, para dar oportunidad a 'general'.
+      if (!isPriceQuery && type === 'item' && bestMatch.score >= SIMILARITY_THRESHOLD) {
+        break; // Salir del bucle solo si es una buena coincidencia en 'item'
       }
     }
 

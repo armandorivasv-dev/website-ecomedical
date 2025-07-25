@@ -370,5 +370,20 @@
       "valor teleconsulta cardiología",
       "cuanto vale la telemedicina en cardiologia"
     ]
+  },
+  {
+    "id": "precios-laboratorio",
+    "type": "price",
+    "keywords": ["laboratorio", "examenes de sangre", "toma de muestras"],
+    "content": "El precio de los examenes de laboratorio a domicilio varía según el tipo de examen y la zona. Los exámenes más complejos o múltiples pueden tener un costo mayor. El servicio incluye la toma de muestra en tu domicilio y la entrega de resultados en formato digital durante el día en la mayoría de los casos. Si necesitas un examen específico, consulta con nuestro equipo para obtener una cotización precisa.",
+    "labels": [
+      "precio laboratorio",
+      "precios exámenes de sangre",
+      "costo laboratorio",
+      "valor laboratorio",
+      "cuanto vale un examen de laboratorio",
+      "precios laboratorio domicilio",
+      "precios exámenes orina"
+    ]
   }
 ]
