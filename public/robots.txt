@@ -1,0 +1,9 @@
+# Permitir a todos los rastreadores
+User-agent: *
+Allow: /
+
+# Deshabilitar el rastreo de las rutas de API
+Disallow: /api/
+
+# Ubicación del sitemap
+Sitemap: https://ecomedical.cl/sitemap.xml
