@@ -1,33 +1,19 @@
 import ClientProviders from '@/components/ClientProviders';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
-
 export const metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: 'ecomedical: Atención medica a domicilio',
-    template: '%s | ecomedical',
-  },
+  metadataBase: 'https://www.ecomedical.cl',
+  title: 'ecomedical: Atención medica a domicilio',
+
   description:
     'Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.',
   openGraph: {
     title: 'ecomedical: Atención medica a domicilio',
     description:
       'Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.',
-    url: '/',
+    url: 'https://www.ecomedical.cl',
     siteName: 'ecomedical',
-    images: [
-      {
-        url: '/assets/logos/ecomedical-logo.png',
-        width: 286,
-        height: 63,
-      },
-    ],
     locale: 'es_CL',
     type: 'website',
-  },
-  icons: {
-    icon: '/favicon.ico',
   },
 };
 
