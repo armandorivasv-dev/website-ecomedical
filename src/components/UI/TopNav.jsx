@@ -221,6 +221,8 @@ export const TopNav = () => {
                         <MenuItem
                           onClick={handleMenuOpen}
                           sx={{ py: '6px', px: '12px' }}
+                          role='menuitem'
+                          aria-label={'Abrir submenú de ' + item.title}
                         >
                           <Typography
                             variant='subtitle1'
@@ -242,6 +244,8 @@ export const TopNav = () => {
                                 handleMenuClose();
                               }}
                               sx={{ py: '6px', px: '12px' }}
+                              role='menuitem'
+                              aria-label={`Ir a la sección ${subItem.title}`}
                             >
                               <Typography
                                 variant='subtitle1'
@@ -257,6 +261,8 @@ export const TopNav = () => {
                       <MenuItem
                         onClick={() => scrollToSection(item.value)}
                         sx={{ py: '6px', px: '12px' }}
+                        role='menuitem'
+                        aria-label={`Ir a la sección ${item.title}`}
                       >
                         <Typography
                           variant='subtitle1'
@@ -271,6 +277,8 @@ export const TopNav = () => {
                 <MenuItem
                   onClick={handleOpenContactForm}
                   sx={{ py: '6px', px: '12px' }}
+                  role='menuitem'
+                  aria-haspopup='true'
                   aria-label='Formulario de contacto'
                 >
                   <Typography
@@ -319,6 +327,7 @@ export const TopNav = () => {
                           <MenuItem
                             onClick={handleMenuOpen}
                             sx={{ py: '6px', px: '12px' }}
+                            role='menuitem'
                             aria-label={'Abrir submenú de ' + item.title}
                           >
                             <Typography
@@ -341,6 +350,8 @@ export const TopNav = () => {
                                   handleMenuClose();
                                 }}
                                 sx={{ py: '6px', px: '12px' }}
+                                role='menuitem'
+                                aria-label={`Ir a la sección ${subItem.title}`}
                               >
                                 <Typography
                                   variant='subtitle1'
@@ -356,6 +367,8 @@ export const TopNav = () => {
                         <MenuItem
                           onClick={() => scrollToSection(item.value)}
                           sx={{ py: '6px', px: '12px' }}
+                          role='menuitem'
+                          aria-label={`Ir a la sección ${item.title}`}
                         >
                           <Typography
                             variant='subtitle1'
@@ -370,6 +383,8 @@ export const TopNav = () => {
                   <MenuItem
                     onClick={handleOpenContactForm}
                     sx={{ py: '6px', px: '12px' }}
+                    role='menuitem'
+                    aria-haspopup='true'
                     aria-label='Abrir formulario de contacto'
                   >
                     <Typography
