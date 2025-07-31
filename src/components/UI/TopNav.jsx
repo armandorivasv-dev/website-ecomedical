@@ -143,6 +143,7 @@ export const TopNav = () => {
             <Link
               href='mailto:ecomedical.cl@gmail.com'
               style={{ textDecoration: 'none' }}
+              aria-label='Enviar correo a ecomedical.cl@gmail.com'
             >
               <Stack
                 direction={'row'}
@@ -163,6 +164,7 @@ export const TopNav = () => {
               href='https://wa.me/56977013227'
               target='_blank'
               style={{ textDecoration: 'none' }}
+              aria-label='Contactar por WhatsApp al +56 9 7701 3227'
             >
               <Stack
                 direction={'row'}
@@ -269,6 +271,7 @@ export const TopNav = () => {
                 <MenuItem
                   onClick={handleOpenContactForm}
                   sx={{ py: '6px', px: '12px' }}
+                  aria-label='Formulario de contacto'
                 >
                   <Typography
                     variant='subtitle1'
@@ -283,7 +286,7 @@ export const TopNav = () => {
               <Button
                 variant='text'
                 color='primary'
-                aria-label='menu'
+                aria-label='abrir menú de navegación'
                 onClick={toggleDrawer(true)}
                 sx={{ minWidth: '30px', p: '4px' }}
               >
@@ -316,6 +319,7 @@ export const TopNav = () => {
                           <MenuItem
                             onClick={handleMenuOpen}
                             sx={{ py: '6px', px: '12px' }}
+                            aria-label={'Abrir submenú de ' + item.title}
                           >
                             <Typography
                               variant='subtitle1'
@@ -366,6 +370,7 @@ export const TopNav = () => {
                   <MenuItem
                     onClick={handleOpenContactForm}
                     sx={{ py: '6px', px: '12px' }}
+                    aria-label='Abrir formulario de contacto'
                   >
                     <Typography
                       variant='subtitle1'

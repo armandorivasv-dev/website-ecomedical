@@ -16,6 +16,8 @@ export const InfochatWidgetThread = ({ messages, isLoading }) => {
   return (
     <Box
       component='main'
+      role='main'
+      aria-label='Hilo de mensajes del Asistente de Consultas'
       sx={{
         flex: '1 1 auto', // Clave: Permite que este Box crezca y ocupe el espacio
         overflowY: 'auto', // Clave: Habilita el scroll vertical cuando el contenido excede el tamaño

@@ -5,11 +5,15 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 export const InfochatWidgetHeader = ({ onClose }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
   return (
-    <Box sx={{ p: 1, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}>
+    <Box
+      sx={{ p: 1, backgroundColor: 'white', borderBottom: '1px solid', borderColor: 'grey.300' }}
+      aria-label='Encabezado del Asistente de Consultas'
+    >
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
         <IconButton
           onClick={onClose}
           size='small'
+          aria-label='Cerrar chat'
         >
           <CloseIcon />
         </IconButton>

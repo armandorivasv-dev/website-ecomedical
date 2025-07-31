@@ -113,6 +113,7 @@ export const Hero = () => {
               size={isMobile ? 'medium' : 'large'}
               href='https://wa.me/56977013227'
               target='_blank'
+              aria-label='Contactar por WhatsApp al +56 9 7701 3227'
             >
               AGENDA UNA CITA
             </Button>
@@ -139,6 +140,7 @@ export const Hero = () => {
             onClick={handleScroll}
             style={{ cursor: 'pointer' }}
             sx={{ fontSize: '60px', color: 'white' }}
+            aria-label='Desplazarse a la siguiente sección'
           />
         </Box>
       </Container>

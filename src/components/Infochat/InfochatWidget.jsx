@@ -20,6 +20,7 @@ export const InfochatWidget = () => {
       {/* Ventana del Chat */}
       <Fade in={isOpen}>
         <Paper
+          aria-label='Ventana del Asistente de Consultas'
           elevation={8}
           sx={{
             position: 'fixed',
@@ -43,7 +44,7 @@ export const InfochatWidget = () => {
       <Fab
         variant='extended'
         color='primary'
-        aria-label='Agente RAG'
+        aria-label='Asistente de Consultas'
         onClick={toggleChat}
         sx={{
           position: 'fixed',
@@ -53,7 +54,10 @@ export const InfochatWidget = () => {
         }}
       >
         {isOpen ? (
-          <CloseIcon sx={{ mr: 2, color: 'white', fontSize: { xs: 25, md: 35 } }} />
+          <CloseIcon
+            sx={{ mr: 2, color: 'white', fontSize: { xs: 25, md: 35 } }}
+            aria-label='Cerrar chat'
+          />
         ) : (
           <AutoAwesomeIcon sx={{ mr: 2, color: 'white', fontSize: { xs: 25, md: 35 } }} />
         )}

@@ -222,6 +222,7 @@ export const ContactForm = (props) => {
                         borderRadius: '10px',
                         marginTop: '50px',
                       }}
+                      aria-label='Nombre y Apellido de contacto'
                     />
 
                     <TextField
@@ -240,6 +241,7 @@ export const ContactForm = (props) => {
                         backgroundColor: 'white',
                         borderRadius: '10px',
                       }}
+                      aria-label='Email de contacto'
                     />
 
                     <TextField
@@ -258,6 +260,7 @@ export const ContactForm = (props) => {
                         backgroundColor: 'white',
                         borderRadius: '10px',
                       }}
+                      aria-label='Teléfono de contacto'
                     />
 
                     <TextField
@@ -278,6 +281,7 @@ export const ContactForm = (props) => {
                         backgroundColor: 'white',
                         borderRadius: '10px',
                       }}
+                      aria-label='Mensaje de contacto'
                     />
                   </Stack>
                   <FormControlLabel
@@ -288,6 +292,7 @@ export const ContactForm = (props) => {
                       />
                     }
                     label='Acepto la política de privacidad'
+                    aria-label='Acepto la política de privacidad'
                   />
 
                   {checked && (
@@ -329,10 +334,18 @@ export const ContactForm = (props) => {
                         />
                       </Box>
                       {resultOperation === randomOperation.result && (
-                        <CheckIcon sx={{ color: 'green', fontSize: '30px' }} />
+                        <CheckIcon
+                          sx={{ color: 'green', fontSize: '30px' }}
+                          aria-label='Operación correcta'
+                        />
                       )}
 
-                      {validateOperation === false && <ClearIcon sx={{ color: 'red', fontSize: '30px' }} />}
+                      {validateOperation === false && (
+                        <ClearIcon
+                          sx={{ color: 'red', fontSize: '30px' }}
+                          aria-label='Operación incorrecta'
+                        />
+                      )}
                     </Stack>
                   )}
 
