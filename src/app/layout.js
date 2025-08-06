@@ -5,11 +5,11 @@ export const metadata = {
   title: 'ecomedical: Atención medica a domicilio',
 
   description:
-    'Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.',
+    'Ofrecemos servicios médicos a domicilio: Ecotomografías a domicilio, Doppler a domicilio, Ecocardiogramas a domicilio, Holter a domicilio, Rayos X a domicilio, Laboratorio y Medicina General  a domicilio. Atención experta y tecnología avanzada en la comodidad de su hogar.',
   openGraph: {
     title: 'ecomedical: Atención medica a domicilio',
     description:
-      'Atención médica integral con médicos expertos, tecnología avanzada y un servicio compasivo. Su salud, nuestra prioridad.',
+      'Ofrecemos servicios médicos a domicilio: Ecotomografías a domicilio, Doppler a domicilio, Ecocardiogramas a domicilio, Holter a domicilio, Rayos X a domicilio, Laboratorio y Medicina General  a domicilio. Atención experta y tecnología avanzada en la comodidad de su hogar.',
     url: 'https://www.ecomedical.cl',
     siteName: 'ecomedical',
     locale: 'es_CL',
